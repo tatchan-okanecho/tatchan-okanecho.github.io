@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>お金の16タイプ診断｜今月のあなたは何タイプ？</title>
+<meta name="description" content="30問・約5分でわかる、あなたのお金の使い方タイプ。16タイプの詳しい解説と、次にやることまで。">
+<meta property="og:title" content="お金の16タイプ診断｜あなたは何タイプ？">
+<meta property="og:description" content="30問・約5分。お金の使い方を16タイプで診断して、次にやることまでわかります。">
+<meta property="og:image" content="https://tatchan-okanecho.github.io/og.png">
+<meta property="og:url" content="https://tatchan-okanecho.github.io/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFF8EC; --bg2:#FFEFD6; --card:#FFFFFF; --ink:#1E2A38; --sub:#5F6A79; --line:#EDE4D3;
+  --navy:#1F3A5F; --red:#D62E2E; --accent:#E8902A; --left:#E8902A; --right:#3A78C9;
+  --fuyasu:#3A78C9; --tanoshimu:#E8902A; --seikatsu:#4E9A55; --nagareru:#8C8C8C;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#12161D; --bg2:#1A2029; --card:#1E242E; --ink:#EEF1F5; --sub:#A9B2BF; --line:#2E3642; --navy:#9DBEF0; }
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.75;-webkit-font-smoothing:antialiased}
+.wrap{max-width:600px;margin:0 auto;padding:0 16px 56px}
+.hide{display:none!important}
+.fade{animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.hero{text-align:center;padding:36px 8px 18px;background:radial-gradient(120% 80% at 50% 0%,var(--bg2),transparent 70%)}
+.badge{display:inline-block;background:var(--navy);color:#fff;font-weight:900;font-size:13px;border-radius:999px;padding:4px 14px;letter-spacing:.05em}
+h1{font-size:34px;line-height:1.28;margin:14px 0 10px;color:var(--navy);font-weight:900}
+h1 em{font-style:normal;background:linear-gradient(transparent 62%,#FFD27A 62%);color:var(--red)}
+.lead{color:var(--sub);font-size:15px;margin:0 0 22px}
+.btn{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:999px;background:var(--red);color:#fff;font-family:inherit;font-weight:900;font-size:18px;padding:16px 40px;cursor:pointer;box-shadow:0 6px 0 #A51F1F;transition:transform .08s,box-shadow .08s;text-decoration:none}
+.btn:active{transform:translateY(4px);box-shadow:0 2px 0 #A51F1F}
+.btn.ghost{background:transparent;color:var(--navy);border:2px solid var(--navy);box-shadow:none;font-size:16px;padding:12px 28px}
+.meta{display:flex;justify-content:center;flex-wrap:wrap;gap:6px 18px;color:var(--sub);font-size:13px;margin-top:16px}
+.meta b{color:var(--ink)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px;margin:16px 0;box-shadow:0 4px 18px rgba(31,58,95,.06)}
+h2{font-size:19px;margin:0 0 10px;color:var(--navy)}
+h3{font-size:16px;margin:18px 0 6px;color:var(--navy)}
+.note{font-size:12px;color:var(--sub)}
+.center{text-align:center}
+a{color:var(--navy);font-weight:700}
+
+/* how it works */
+.axes4{display:grid;grid-template-columns:1fr;gap:8px}
+.ax{display:flex;justify-content:space-between;align-items:center;background:var(--bg);border-radius:12px;padding:8px 12px;font-weight:700;font-size:14px}
+.ax .l{color:var(--left)}.ax .r{color:var(--right)}
+.ax .c{font-size:11px;color:var(--sub);letter-spacing:.1em}
+
+/* 16 grid */
+.grid16{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+details.t16{border-radius:12px;background:var(--bg);border:1px solid var(--line);font-size:13px;line-height:1.5}
+details.t16 summary{list-style:none;cursor:pointer;padding:8px 10px;font-weight:700}
+details.t16 summary::-webkit-details-marker{display:none}
+details.t16 .c{font-size:11px;letter-spacing:.12em;color:var(--sub);display:block}
+details.t16 p{margin:0;padding:0 10px 10px;color:var(--sub);font-size:12px}
+details.t16.on{outline:3px solid var(--red);background:var(--card)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:12px;color:var(--sub);margin:4px 0 10px}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:4px;vertical-align:-1px}
+
+/* quiz */
+.qhead{display:flex;justify-content:space-between;align-items:center;margin:22px 0 6px;color:var(--sub);font-size:13px;font-weight:700}
+.back{background:none;border:0;color:var(--sub);font-family:inherit;font-size:13px;cursor:pointer;padding:4px}
+.prog{height:10px;background:var(--line);border-radius:99px;overflow:hidden}
+.prog i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--red));width:0;transition:width .35s}
+.qnum{font-size:40px;font-weight:900;color:var(--line);line-height:1}
+.q{font-size:20px;font-weight:900;margin:4px 0 16px;line-height:1.5}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+.pole{border-radius:14px;padding:12px;font-weight:700;font-size:15px;line-height:1.5;border:2px solid var(--line);background:var(--bg)}
+.pole.l{border-color:var(--left)}.pole.r{border-color:var(--right);text-align:right}
+.pole small{display:block;font-size:11px;font-weight:700;letter-spacing:.08em}
+.pole.l small{color:var(--left)}.pole.r small{color:var(--right)}
+.scale{display:flex;justify-content:space-between;align-items:center;gap:2px;padding:6px 0}
+.scale button{border-radius:50%;border:3px solid;background:transparent;cursor:pointer;padding:0;flex:none;transition:transform .1s,background .1s}
+.scale button:hover{transform:scale(1.12)}
+.scale button.sel{transform:scale(1.15)}
+.scale-lab{display:flex;justify-content:space-between;font-size:12px;font-weight:700;color:var(--sub)}
+.hint{text-align:center;font-size:12px;color:var(--sub);margin-top:8px}
+
+/* result */
+.rhead{color:#fff;border-radius:24px;padding:26px 20px 22px;text-align:center;margin-top:20px;position:relative;overflow:hidden}
+.rhead:after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.12)}
+.rhead .k{font-size:13px;font-weight:700;opacity:.9}
+.rhead .code{letter-spacing:.3em;font-weight:900;font-size:20px;opacity:.9;margin-top:6px}
+.rhead .name{font-size:32px;font-weight:900;line-height:1.3;margin:4px 0 8px}
+.rhead .catch{font-size:15px;font-weight:700;background:rgba(255,255,255,.18);display:inline-block;border-radius:12px;padding:4px 12px}
+.rhead .grp{margin-top:10px;font-size:13px;font-weight:700;opacity:.95}
+.axis{margin:14px 0}
+.axis .lab{display:flex;justify-content:space-between;font-size:13px;font-weight:700;color:var(--sub)}
+.axis .lab .on{color:var(--ink)}
+.axis .bar{height:14px;background:var(--line);border-radius:99px;position:relative;margin-top:4px;overflow:hidden}
+.axis .bar i{position:absolute;top:0;bottom:0;border-radius:99px}
+.axis .pct{text-align:center;font-size:13px;font-weight:900;margin-top:2px}
+ul.l{margin:0;padding:0;list-style:none}
+ul.l li{position:relative;padding-left:22px;margin:6px 0}
+ul.l li:before{content:"";position:absolute;left:4px;top:.65em;width:8px;height:8px;border-radius:50%;background:var(--accent)}
+ul.l.bad li:before{background:var(--sub)}
+.words{font-size:20px;font-weight:900;color:var(--red);text-align:center;margin:6px 0}
+.partner{display:flex;gap:12px;align-items:center;background:var(--bg);border-radius:14px;padding:12px}
+.partner .code{font-size:12px;letter-spacing:.12em;color:var(--sub);font-weight:900}
+.steps{counter-reset:s;margin:0;padding:0;list-style:none}
+.steps li{counter-increment:s;position:relative;padding:12px 12px 12px 54px;margin:10px 0;background:var(--bg);border-radius:14px}
+.steps li:before{content:counter(s);position:absolute;left:12px;top:12px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font-weight:900;display:grid;place-items:center}
+.steps b{display:block;color:var(--navy)}
+.steps a{display:inline-block;margin-top:4px}
+canvas{width:100%;height:auto;border-radius:16px;border:1px solid var(--line);display:block}
+.row{display:grid;grid-template-columns:4.2em 1fr 1.5em;gap:8px;align-items:center;margin:10px 0;font-size:14px;font-weight:700}
+.row input{width:100%;padding:10px 12px;border:2px solid var(--line);border-radius:12px;font-size:16px;font-family:inherit;background:var(--bg);color:var(--ink)}
+.row input:focus{outline:none;border-color:var(--navy)}
+.stack{display:flex;height:26px;border-radius:8px;overflow:hidden;margin:4px 0 2px}
+.stack span{display:block;height:100%}
+.big{font-size:26px;font-weight:900;color:var(--red)}
+.me{display:flex;gap:14px;align-items:center}
+.me img{width:64px;height:64px;border-radius:50%;border:3px solid var(--navy);flex:none;object-fit:cover}
+footer{font-size:12px;color:var(--sub);text-align:center;margin-top:28px;line-height:1.8}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- TOP -->
+<section id="top" class="fade">
+  <div class="hero">
+    <span class="badge">全16タイプ ｜ 30問 ｜ 約5分</span>
+    <h1>あなたのお金の<br><em>16タイプ</em>は？</h1>
+    <p class="lead">お金の使い方には、その人らしさが出ます。<br>30問に答えると、あなたのタイプと<br>次にやるべきことがわかります。</p>
+    <button class="btn" onclick="start()">診断をはじめる ▶</button>
+    <div class="meta"><span>登録 <b>不要</b></span><span>料金 <b>無料</b></span><span>月1回 <b>やり直せる</b></span></div>
+  </div>
+
+  <div class="card">
+    <h2>4つの軸で、あなたを読み解く</h2>
+    <div class="axes4">
+      <div class="ax"><span class="l">U 使う</span><span class="c">お金の向き</span><span class="r">貯める T</span></div>
+      <div class="ax"><span class="l">F 増やす</span><span class="c">リスクとの距離</span><span class="r">守る M</span></div>
+      <div class="ax"><span class="l">K 計画派</span><span class="c">お金の決め方</span><span class="r">直感派 C</span></div>
+      <div class="ax"><span class="l">E 体験</span><span class="c">満足の源</span><span class="r">モノ G</span></div>
+    </div>
+    <p class="note" style="margin:10px 0 0">さらに、お金への気持ちの揺れやすさで「-A（どっしり型）」「-T（気にしい型）」に分かれます。</p>
+  </div>
+
+  <div class="card">
+    <h2>16タイプ一覧</h2>
+    <div class="legend" id="legend"></div>
+    <div class="grid16" id="grid16"></div>
+    <p class="note" style="margin:10px 0 0">タイプ名をタップすると、ひとことの説明が開きます。</p>
+  </div>
+</section>
+
+<!-- QUIZ -->
+<section id="quiz" class="hide">
+  <div class="qhead"><button class="back" onclick="prev()">◀ もどる</button><span id="qno"></span></div>
+  <div class="prog"><i id="bar"></i></div>
+  <div class="card fade" id="qcard">
+    <div class="qnum" id="qnum"></div>
+    <div class="q" id="qtext"></div>
+    <div class="pair">
+      <div class="pole l"><small>A</small><span id="la"></span></div>
+      <div class="pole r"><small>B</small><span id="lb"></span></div>
+    </div>
+    <div class="scale" id="scale"></div>
+    <div class="scale-lab"><span style="color:var(--left)">← Aに近い</span><span style="color:var(--right)">Bに近い →</span></div>
+    <div class="hint">近いほうの丸をタップ。真ん中寄りほど「どちらとも言える」</div>
+  </div>
+</section>
+
+<!-- RESULT -->
+<section id="result" class="hide">
+  <div class="rhead fade" id="rhead">
+    <div class="k">あなたのお金タイプは…</div>
+    <div class="code" id="rcode"></div>
+    <div class="name" id="rname"></div>
+    <div class="catch" id="rcatch"></div>
+    <div class="grp" id="rgrp"></div>
+    <div class="grp" id="rprev"></div>
+  </div>
+
+  <div class="card">
+    <h2>あなたの5つの傾向</h2>
+    <div id="axes"></div>
+  </div>
+
+  <div class="card">
+    <h2>どんなタイプ？</h2>
+    <p id="rover" style="margin:0"></p>
+    <h3>口ぐせ</h3><div class="words" id="rwords"></div>
+    <h3>お金の使い方のクセ</h3><ul class="l" id="rhabit"></ul>
+    <h3>強み</h3><ul class="l" id="rgood"></ul>
+    <h3>弱点</h3><ul class="l bad" id="rbad"></ul>
+    <h3>あなたが「-<span id="atl"></span>」なら</h3><p id="rat" style="margin:0"></p>
+  </div>
+
+  <div class="card">
+    <h2>あなたに合ったお金の増やし方</h2>
+    <ul class="l" id="rgrow"></ul>
+    <h3>相性のいいタイプ</h3>
+    <div class="partner"><div><div class="code" id="pcode"></div><b id="pname"></b><div class="note" id="pwhy"></div></div></div>
+  </div>
+
+  <div class="card">
+    <h2>次にやること（3ステップ）</h2>
+    <ol class="steps" id="steps"></ol>
+  </div>
+
+  <div class="card">
+    <h2>ステップ1：結果を保存・シェア</h2>
+    <canvas id="share" width="1080" height="1350"></canvas>
+    <p class="center" style="margin:16px 0 4px"><button class="btn" onclick="savePng()">画像を保存する</button></p>
+    <p class="note center">Instagramのストーリーや、Xにそのまま使えます。友だちのタイプとくらべてみて。</p>
+  </div>
+
+  <div class="card" id="calc">
+    <h2>今月の「流れるお金」を計算する</h2>
+    <p class="note">今月の出費をざっくり4つに分けて入れてください（空欄OK）。入れた数字はどこにも送られません。</p>
+    <div class="row"><span style="color:var(--fuyasu)">増やす</span><input id="m0" inputmode="numeric" placeholder="投資・勉強・貯金"><span class="note">円</span></div>
+    <div class="row"><span style="color:var(--tanoshimu)">楽しむ</span><input id="m1" inputmode="numeric" placeholder="旅行・交際・趣味"><span class="note">円</span></div>
+    <div class="row"><span style="color:var(--seikatsu)">生活</span><input id="m2" inputmode="numeric" placeholder="家賃・食費・光熱費"><span class="note">円</span></div>
+    <div class="row"><span style="color:var(--nagareru)">流れる</span><input id="m3" inputmode="numeric" placeholder="コンビニ・なんとなく"><span class="note">円</span></div>
+    <p class="center"><button class="btn ghost" onclick="compare()">計算する</button></p>
+    <div id="cmp"></div>
+  </div>
+
+  <div class="card">
+    <h2>16タイプ一覧</h2>
+    <div class="legend" id="legend2"></div>
+    <div class="grid16" id="grid16b"></div>
+  </div>
+
+  <div class="card">
+    <div class="me">
+      <img src="data:image/jpeg;base64,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" alt="たっちゃん">
+      <div><b>来月の月末に、またやってみてください</b><br><small class="note">お金の使い方は月ごとに変わります。タイプが変わっているかも。</small></div>
+    </div>
+    <p class="center" style="margin-top:16px"><button class="btn ghost" onclick="start()">もう一度診断する</button></p>
+  </div>
+</section>
+
+<footer>
+  たっちゃん｜使って増やす会社員のお金帳<br>
+  ※遊びの診断です。性格検査や投資の助言ではありません。
+</footer>
+</div>
+
+<script>
+// axis: 0 U/T, 1 F/M, 2 K/C, 3 E/G, 4 A/T ; p=0: A-side is first pole, p=1: A-side is second pole
+const Q=[
+ {a:0,p:0,t:"給料日のあと、最初に考えるのは？",A:"今月どこに遊びに行こう",B:"今月いくら残せるかな"},
+ {a:1,p:0,t:"手元に10万円が余ったら？",A:"投資や自分の勉強に回す",B:"とりあえず口座に置いておく"},
+ {a:2,p:0,t:"旅行の予約、近いのは？",A:"早めに比べて、割引やポイントを狙う",B:"行きたくなったらすぐ取る"},
+ {a:3,p:0,t:"同じ1万円なら、満足するのは？",A:"友だちとの旅行や食事",B:"ずっと使える服やガジェット"},
+ {a:4,p:0,t:"使いすぎた月の夜は？",A:"あまり気にせず寝られる",B:"何度も残高を見てしまう"},
+ {a:0,p:1,t:"臨時収入が5万円入ったら？",A:"そのまま貯金に回す",B:"せっかくなので楽しむ"},
+ {a:1,p:1,t:"株価が10%下がったニュース。思うのは？",A:"やっぱり投資はこわい",B:"安く買えるチャンスかも"},
+ {a:2,p:1,t:"家計簿やお金の記録は？",A:"気が向いたときだけ見る",B:"予算を決めて、月末に見直す"},
+ {a:3,p:1,t:"ボーナスで一番うれしい使い道は？",A:"前から欲しかったモノを買う",B:"行ったことのない場所に行く"},
+ {a:4,p:1,t:"同世代の貯金額を聞いたら？",A:"焦ってしまう",B:"自分は自分と思える"},
+ {a:0,p:0,t:"「お金はあの世に持っていけない」",A:"かなり共感する",B:"あまり共感しない"},
+ {a:1,p:0,t:"元本保証と、増えるかもしれないけど減るかもしれないもの。選ぶなら？",A:"増えるかもしれないほう",B:"元本保証のほう"},
+ {a:2,p:0,t:"コンビニでの買い物は？",A:"買うものを決めてから入る",B:"なんとなく入って、なんとなく買う"},
+ {a:3,p:0,t:"人にお金を使うなら？",A:"一緒に過ごす時間に使う",B:"形に残るプレゼントにする"},
+ {a:4,p:0,t:"お金で失敗したら？",A:"すぐに切り替えられる",B:"しばらく引きずる"},
+ {a:0,p:1,t:"いい人生に近いのは？",A:"お金の不安がない人生",B:"好きなことにお金を使える人生"},
+ {a:1,p:1,t:"NISAについて近いのは？",A:"気になるけど、まだ様子見",B:"もう使っている・枠を使い切りたい"},
+ {a:2,p:1,t:"大きい買い物の前は？",A:"ピンときたら買う",B:"比較サイトやレビューを見る"},
+ {a:3,p:1,t:"いちばん思い出に残っている出費は？",A:"長く使っている愛用品",B:"ライブや旅行"},
+ {a:4,p:1,t:"将来のお金について",A:"不安になることが多い",B:"なんとかなると思っている"},
+ {a:0,p:0,t:"「節約しよう」と言われたら？",A:"削るより、使い方を工夫したい",B:"まず楽しむお金から削る"},
+ {a:1,p:0,t:"資格や本、講座に月1万円",A:"安い自己投資だと思う",B:"ちょっと高いと思う"},
+ {a:2,p:0,t:"毎月の携帯代やサブスク代は？",A:"だいたいの金額を言える",B:"正確には知らない"},
+ {a:3,p:0,t:"休日にお金を使うのは？",A:"どこかに出かけたとき",B:"買い物をしたとき"},
+ {a:4,p:0,t:"SNSで「20代で資産◯千万円」を見たら？",A:"参考程度に見る",B:"ちょっと落ち込む"},
+ {a:0,p:1,t:"今月ちょっと使いすぎた。気持ちは？",A:"来月は絶対に締める",B:"楽しかったからOK"},
+ {a:1,p:1,t:"「現金は物価が上がると目減りする」",A:"聞くけど、現金が安心",B:"実感して、もう動いている"},
+ {a:2,p:1,t:"ポイントやキャンペーンは？",A:"あまり気にしない",B:"調べて使い分ける"},
+ {a:3,p:1,t:"「モノより思い出」",A:"モノも大事だと思う",B:"そう思う"},
+ {a:4,p:1,t:"決めた予算を少しオーバーしたら？",A:"自分を責めてしまう",B:"想定内と考える"},
+];
+const L=[["U","T","使う","貯める"],["F","M","増やす","守る"],["K","C","計画派","直感派"],["E","G","体験","モノ"],["A","T","どっしり","気にしい"]];
+const GROUP={UF:["攻めの冒険家","#E8902A","使うも増やすも積極的"],UM:["今を楽しむ派","#D9577A","今の楽しさを大切にする"],TF:["コツコツ投資家","#3A78C9","貯めて、増やす"],TM:["守りの達人","#4E9A55","堅実に守る"]};
+const AT={A:"お金のことで気持ちが揺れにくいタイプです。失敗しても切り替えが早く、周りと比べて焦ることも少なめ。そのぶん、見直しが後回しになりやすいので、月1回だけ数字を見る日を決めておくと安心です。",
+T:"お金のことをよく気にかけるタイプです。慎重で、改善しようとする力が強いのが長所。ただ、不安が大きいと動けなくなることも。決めたルールを自動にして、考えすぎない仕組みを作ると楽になります。"};
+const TY={
+UFKE:{n:"使って増やす冒険家",c:"楽しみも資産も、どっちも取りにいく",w:"「どうせ行くなら、安く行こう」",
+o:"「お金は使うためにある」と思いながら、ちゃんと増やす仕組みも持っているタイプ。旅行や人との時間にお金を使い、そのぶん割引やポイントで中身を濃くします。計画を立てるのが好きで、使うと決めたら迷いません。",
+h:["旅行は早めに予約して割引を狙う","給料日に投資の分を先に分ける","「払ってよかった」に使ったお金は後悔しない"],
+g:["使う・増やすのバランス感覚","数字で判断できる","経験が人生の厚みになる"],
+b:["楽しむ予定が重なると一気にふくらむ","計画が崩れるとストレスになる","少しの値動きで売り買いしたくなる"],
+gr:["毎月の積立は自動に任せて、触らない","ボーナスは「半分投資・半分遊び」のように割合を先に決める"],
+p:["TFKG","守りの視点をくれて、攻めすぎを防いでくれる"],
+s:["来月の「楽しむ」予算を先に決める","旅行を福利厚生やマイルで安くできないか調べる","投資は決算を見てから。焦って売買しない"]},
+UFKG:{n:"戦略的コレクター",c:"いいモノを、いいタイミングで手に入れる",w:"「今じゃない、もう少し待とう」",
+o:"欲しいモノはとことん調べて、いちばんいいタイミングで買うタイプ。セールやポイントの使い方がうまく、投資にも同じ目で向き合えます。モノを選ぶ目が、そのまま銘柄を選ぶ目になります。",
+h:["欲しいモノはリストにしてセールを待つ","レビューと価格の推移を必ず見る","投資もじっくり比べてから決める"],
+g:["情報を集めて比べる力","長く使える良いモノを選べる","買い時を待てる"],
+b:["調べすぎて決められない","「お得だから」で買い増やしがち","モノが増えて管理が大変"],
+gr:["欲しいモノ用の口座と投資の口座を分ける","ポイント投資など「お得」と相性のいい方法から始める"],
+p:["TMCE","肩の力を抜くことを教えてくれる"],
+s:["欲しいモノリストを3つに絞る","1年使っていないモノを売ってみる","投資の比較メモを1つ作る"]},
+UFCE:{n:"勢いの旅人投資家",c:"思い立ったら、旅にも投資にも飛びこむ",w:"「とりあえず行ってみよう」",
+o:"直感とスピードで動くタイプ。行きたい場所ができたら行き、気になる銘柄があれば買ってみる。行動量が多いぶん経験も豊富ですが、お金の管理は後回しになりがちです。",
+h:["週末の予定はその週に決める","ニュースを見てすぐ買ってみる","旅先での出費はあまり気にしない"],
+g:["行動が早く、チャンスを逃さない","経験の数が多い","失敗しても前向き"],
+b:["気づくと口座が減っている","思いつきの売買が多い","家計簿が続かない"],
+gr:["投資は「積立だけの口座」と「遊び枠」を分ける","遊び枠は月いくらまでと上限を決める"],
+p:["TFKE","勢いに計画を足してくれる"],
+s:["先月の出費をざっくり4つに分ける","投資の遊び枠の上限を決める","旅行の前に、割引やマイルを1回だけ調べる"]},
+UFCG:{n:"推し活トレーダー",c:"好きなモノにも、銘柄にも熱くなれる",w:"「好きだから、買う」",
+o:"好きなモノや推しにお金を使い、好きな会社の株も持ちたいタイプ。熱量が高く、好きなことの情報には誰よりも詳しい。「好き」がいちばんの原動力です。",
+h:["推しのグッズや新作は迷わず買う","好きな会社の株を買う","値動きをよくチェックする"],
+g:["熱中する力","好きな分野の知識が深い","お金を使う理由がはっきりしている"],
+b:["好きな銘柄に偏る","新作が出るたびに出費が増える","値動きに一喜一憂する"],
+gr:["「好きな会社」は全体の一部にして、残りは分散する","推し活の予算を固定費のように毎月決める"],
+p:["TMKG","熱くなりすぎたときのブレーキになってくれる"],
+s:["推し活の月予算を決める","持っている株の業種の偏りを見る","売ってもいいモノを1つ探す"]},
+UMKE:{n:"計画的エンジョイ派",c:"予算の中で、全力で楽しむ",w:"「予算内なら、全力で」",
+o:"楽しむことが大好きで、そのための予算管理もできるタイプ。投資にはまだ慎重ですが、使う計画はしっかり立てられます。決めた予算の中で最大限に楽しむのが得意です。",
+h:["旅行や飲み会の予算を先に決める","割引やクーポンをよく使う","お金は口座に置いておく"],
+g:["計画して楽しめる","使いすぎにくい","人との時間を大事にできる"],
+b:["お金が増える仕組みが弱い","現金のままだと物価高で目減りする","楽しむ予算が年々ふくらむ"],
+gr:["まずは月5,000円のNISA積立から","「楽しむ」予算の1割を増やす側にも回す"],
+p:["UFKE","楽しみながら増やすお手本になる"],
+s:["NISAの口座があるか確認する","楽しむ予算の1割を増やす側へ","福利厚生の旅行割引を調べる"]},
+UMKG:{n:"こだわり職人",c:"選び抜いたモノにだけお金を使う",w:"「いいモノを、長く」",
+o:"本当に気に入ったモノにだけお金を出すタイプ。安物買いはしない代わりに、こだわりの一品には惜しみません。お金を増やすことには、まだ慎重です。",
+h:["長く使えるいいモノを選ぶ","修理やメンテナンスをして使い続ける","投資より貯金のほうが安心"],
+g:["モノを大事にする","衝動買いが少ない","自分の基準がはっきりしている"],
+b:["こだわりの一品が高くつく","増やす行動が後回しになる","現金が増えにくい"],
+gr:["「欲しいモノ貯金」と同じように「未来の自分貯金」を作る","積立は少額・自動で始める"],
+p:["TFKG","こだわりを資産づくりにも向けるヒントをくれる"],
+s:["次に欲しいモノの予算を決める","毎月の自動積立を1つ設定する","使っていないモノを1つ手放す"]},
+UMCE:{n:"その日暮らしの冒険家",c:"今この瞬間がいちばん大事",w:"「今しかできないから」",
+o:"今日を楽しむことに全力のタイプ。誘われたら行き、楽しそうならやってみる。人生経験は豊富ですが、お金の流れは見えていないことが多いです。",
+h:["誘いはだいたい断らない","残高は月末に見る","細かい記録はしない"],
+g:["毎日を楽しめる","人とのご縁が多い","失敗を引きずらない"],
+b:["「流れるお金」が多い","月末が苦しくなりがち","将来の準備が後回し"],
+gr:["給料日に「先に取っておく」仕組みを1つだけ作る","自動積立なら記録もいらない"],
+p:["TMKE","楽しむための予算づくりを教えてくれる"],
+s:["給料日に自動で別口座へ移す設定をする","先月の「流れるお金」を1つ思い出す","同じ体験を割引やポイントで安くする"]},
+UMCG:{n:"衝動買いハンター",c:"見つけたら、もう止まらない",w:"「今買わないと、なくなるかも」",
+o:"「これだ」と思ったら買ってしまうタイプ。買い物の楽しさを誰よりも知っていますが、気づくとモノと出費が増えています。",
+h:["セールや新作に弱い","ネットでついポチる","買ったことを忘れることも"],
+g:["決断が早い","流行に敏感","買い物を楽しめる"],
+b:["「流れるお金」がいちばん多い","使っていないモノが増える","貯金が残りにくい"],
+gr:["「24時間ルール」で、欲しいモノを1日寝かせる","先取り貯金を自動にする"],
+p:["TFKG","冷静さを分けてくれる"],
+s:["カートに入れて24時間待つ","先月買って使っていないモノを数える","先取り貯金を設定する"]},
+TFKE:{n:"未来設計の旅人",c:"貯めて、増やして、ここぞで旅に使う",w:"「来年のために、今は貯める」",
+o:"ふだんは堅実に貯めて増やし、ここぞというときに大きな体験にお金を使うタイプ。長期の計画を立てるのが得意で、ご褒美の使い方がうまいです。",
+h:["毎月決まった額を積み立てる","大きな旅行は早くから計画する","ふだんの出費は控えめ"],
+g:["長期の視点","メリハリがある","目標を立てて達成できる"],
+b:["ふだんの楽しみを我慢しすぎる","計画外の出費に弱い","貯めることが目的になりがち"],
+gr:["今の積立はそのまま続ける","「楽しむ」用の積立も別に作る"],
+p:["UFCE","たまには勢いも大事だと教えてくれる"],
+s:["次の大きな体験の予算と日付を決める","小さなご褒美を月1回入れる","旅行を福利厚生やマイルで安くする"]},
+TFKG:{n:"堅実な資産ビルダー",c:"コツコツ積み上げる、静かな強者",w:"「コツコツが、いちばん強い」",
+o:"毎月コツコツ貯めて、増やす仕組みも整っているタイプ。派手さはありませんが、時間を味方にして着実に資産を積み上げます。",
+h:["先取りで積み立てる","固定費をよく見直す","大きな買い物は計画的に"],
+g:["続ける力","数字に強い","大きく失敗しない"],
+b:["楽しむことにお金を使えない","増えた数字を見て満足して終わる","「ケチ」と思われることも"],
+gr:["今の積立は続けつつ、目的のある「使い道」を決める","資産の使い方の計画も立てる"],
+p:["UFKE","使う楽しさを思い出させてくれる"],
+s:["「楽しむ」に使う額を月に1つ決める","1年の資産の伸びを振り返る","自分へのご褒美を計画に入れる"]},
+TFCE:{n:"のんびり積立旅人",c:"細かいことは気にせず、気づけば増えている",w:"「まあ、なんとかなる」",
+o:"積立は設定済みで、あとはのんびり過ごすタイプ。細かく管理しなくても、仕組みが勝手に増やしてくれます。気が向いたら旅に出ます。",
+h:["積立は自動で放置","家計簿はつけない","旅行は思い立ったら"],
+g:["ストレスが少ない","長く続けられる","仕組みに任せられる"],
+b:["何にいくら使ったか分からない","「流れるお金」に気づきにくい","資産の状況を把握していない"],
+gr:["積立はそのままでOK","年に1回だけ、資産の状況を見る"],
+p:["TFKG","仕組みの点検役になってくれる"],
+s:["年1回の資産チェックの日を決める","先月の大きな出費を3つ書き出す","旅行代を割引で下げる"]},
+TFCG:{n:"ほったらかし投資家",c:"設定したら、あとは見ない",w:"「放っておくのが、いちばん」",
+o:"投資は設定したら放置、モノは必要なときに必要なものを買うタイプ。お金にあまり時間を使わないのが強みです。",
+h:["積立を設定して見ない","欲しいモノは必要になってから買う","家計簿は年に数回"],
+g:["お金に振り回されない","長期投資と相性がいい","シンプル"],
+b:["ムダな固定費に気づかない","設定が古いままになる","必要以上に貯めこむことも"],
+gr:["年1回、積立額を見直す","固定費の点検もセットでやる"],
+p:["UMKE","使う楽しさを足してくれる"],
+s:["サブスクと携帯代を確認する","積立額を見直す","お金を使う目的を1つ決める"]},
+TMKE:{n:"慎重な思い出貯金家",c:"体験は好き、でも予算はゆずらない",w:"「楽しむ分は、ちゃんと貯めてから」",
+o:"旅行や人との時間は大切にしつつ、予算はきっちり守るタイプ。投資にはまだ慎重で、現金で持っているほうが安心です。",
+h:["旅行用に貯金を分ける","予算オーバーはしない","投資は様子見"],
+g:["計画的に楽しめる","使いすぎない","体験を大切にできる"],
+b:["現金が物価高で目減りする","増やすチャンスを逃しがち","我慢が多くなることも"],
+gr:["まずはつみたてを少額から","旅行貯金の一部を投資に回す"],
+p:["UFKE","増やす一歩のお手本になる"],
+s:["NISAの少額積立を調べる","旅行代を割引やマイルで下げる","現金で持っておく額の目安を決める"]},
+TMKG:{n:"鉄壁の金庫番",c:"1円もムダにしない守りの達人",w:"「ムダは1円でもイヤ」",
+o:"支出を細かく管理して、ムダを徹底的に省くタイプ。貯める力は16タイプでトップクラスです。ただ、守りが固すぎて、増やす・楽しむ機会を逃すことも。",
+h:["家計簿を毎日つける","固定費はいちばん安いものを選ぶ","現金・預金が中心"],
+g:["貯める力が強い","ムダに気づける","計画性が高い"],
+b:["楽しむことに罪悪感がある","現金は物価高に弱い","人付き合いの出費を嫌がる"],
+gr:["貯めた分の一部を長期の積立に","「使っていい額」を決めて使う練習をする"],
+p:["UFCE","一歩踏み出す勇気をくれる"],
+s:["使わない預金の一部で少額積立を始める","月1回、思い切り楽しむ日を作る","1年の「楽しむ予算」を決める"]},
+TMCE:{n:"気まぐれ節約家",c:"貯めたり使ったり、波がある",w:"「今月こそは…！」",
+o:"節約モードとご褒美モードを行き来するタイプ。がんばって貯めたあと、反動でまとめて使うことも。気分の波とうまく付き合えれば強いです。",
+h:["節約は短期集中","反動でご褒美を買う","家計簿は続いたり止まったり"],
+g:["やる気が出たときの爆発力","楽しむ気持ちを忘れない","柔軟"],
+b:["反動のドカ使い","記録が続かない","貯金が増えたり減ったり"],
+gr:["気分に左右されない自動積立","「ご褒美予算」を最初から入れておく"],
+p:["TFKE","メリハリのお手本になる"],
+s:["自動積立を設定する","ご褒美の予算を決める","家計簿は4つに分けるだけにする"]},
+TMCG:{n:"貯金箱タイプ",c:"とにかく現金で持っていたい",w:"「とりあえず、取っておこう」",
+o:"お金は使わず、増やさず、とにかく手元に置いておきたいタイプ。安心感は大事ですが、物価が上がる今は、現金だけだと少しずつ価値が減ってしまいます。",
+h:["使い道を決めずに貯める","投資はこわい","口座の残高を見て安心する"],
+g:["安心を大事にできる","浪費が少ない","堅実"],
+b:["物価高で目減りする","何のために貯めているか分からない","使う楽しさを知らない"],
+gr:["生活費の数か月分を残し、その残りの一部だけ積立に","貯める目的を決める"],
+p:["UFKE","使うことの楽しさも教えてくれる"],
+s:["生活費の6か月分を目安に分ける","残りの一部で少額積立を調べる","貯める目的を1つ書く"]},
+};
+const NOTE="https://note.com/genial_myrtle564/n/";
+const ART={
+ E:["n087806db71d5","福利厚生で旅行代が半額以上に。累計50万円浮いた会社員の話"],
+ E2:["n589d5e198861","沖縄旅行、予約はほぼマイル。現地で使ったのは5万円だけ"],
+ G:["ne5f078e70e43","値上げ前に買うもの・買わなくていいもの（冒頭は無料）"],
+ K:["n74eeb58a897a","12月の給料、いくら増える？ 年収別に電卓たたいてみた【2026年 年末調整】"],
+ C:["n8a5577f13911","【無料配布】使って増やす家計簿シート。4つに分けるだけで、お金のクセが見える"],
+ T:["nac80db9f9223","タバコ代、年15万円前後。ゴルフ1年分とほぼ同じだった"],
+};
+const IG="https://www.instagram.com/tatchan_okanecho/";
+
+function grid(id,legId,on){
+  document.getElementById(legId).innerHTML=Object.values(GROUP).map(g=>`<span><i class="dot" style="background:${g[1]}"></i>${g[0]}</span>`).join("");
+  document.getElementById(id).innerHTML=Object.entries(TY).map(([c,t])=>`<details class="t16${c===on?' on':''}" style="border-left:5px solid ${GROUP[c.slice(0,2)][1]}"${c===on?' open':''}><summary><span class="c">${c}</span>${t.n}</summary><p>${t.c}。${t.o.split("。")[0]}。</p></details>`).join("");
+}
+grid("grid16","legend",null);
+
+let ans=[],i=0,RES=null;
+function show(id){["top","quiz","result"].forEach(s=>document.getElementById(s).classList.toggle("hide",s!==id));window.scrollTo(0,0)}
+function start(){ans=new Array(Q.length).fill(null);i=0;show("quiz");render()}
+function prev(){if(i>0){i--;render()}else show("top")}
+function render(){
+  const q=Q[i];
+  document.getElementById("bar").style.width=(i/Q.length*100)+"%";
+  document.getElementById("qno").textContent=(i+1)+" / "+Q.length;
+  document.getElementById("qnum").textContent="Q"+String(i+1).padStart(2,"0");
+  document.getElementById("qtext").textContent=q.t;
+  document.getElementById("la").textContent=q.A;
+  document.getElementById("lb").textContent=q.B;
+  const card=document.getElementById("qcard");card.classList.remove("fade");void card.offsetWidth;card.classList.add("fade");
+  const sc=document.getElementById("scale");sc.innerHTML="";
+  const sizes=[38,33,28,24,20,20,24,28,33,38];
+  for(let k=0;k<10;k++){
+    const b=document.createElement("button");const s=sizes[k];
+    const col=k<5?"var(--left)":"var(--right)";
+    b.style.width=s+"px";b.style.height=s+"px";b.style.borderColor=col;
+    b.setAttribute("aria-label",k<5?`Aに近い（${5-k}）`:`Bに近い（${k-4}）`);
+    if(ans[i]===k){b.classList.add("sel");b.style.background=col}
+    b.onclick=()=>{ans[i]=k;b.classList.add("sel");b.style.background=col;setTimeout(()=>{i++;i<Q.length?render():finish()},160)};
+    sc.appendChild(b);
+  }
+}
+function finish(){
+  const sum=[0,0,0,0,0],cnt=[0,0,0,0,0];
+  Q.forEach((q,k)=>{let s=(4.5-ans[k])/4.5; if(q.p===1)s=-s; sum[q.a]+=s;cnt[q.a]++;});
+  const pct=sum.map((v,k)=>Math.round(50+50*v/cnt[k])); // % toward first pole
+  const letters=pct.map((p,k)=>p>=50?L[k][0]:L[k][1]);
+  const code=letters.slice(0,4).join(""),idt=letters[4];
+  const t=TY[code],g=GROUP[code.slice(0,2)];
+  RES={code,idt,t,g,pct};
+  let prevTxt="";try{const pv=JSON.parse(localStorage.getItem("okane16_last")||"null");if(pv&&pv.code){prevTxt=pv.code===code+"-"+idt?`前回（${pv.date}）と同じタイプでした`:`前回（${pv.date}）は ${pv.code}「${pv.name}」でした`}
+   const d=new Date();localStorage.setItem("okane16_last",JSON.stringify({code:code+"-"+idt,name:t.n,date:(d.getMonth()+1)+"月"+d.getDate()+"日"}))}catch(e){}
+  document.getElementById("rprev").textContent=prevTxt;
+  const h=document.getElementById("rhead");h.style.background=`linear-gradient(135deg,${g[1]},${shade(g[1])})`;
+  document.getElementById("rcode").textContent=code+"-"+idt;
+  document.getElementById("rname").textContent=t.n;
+  document.getElementById("rcatch").textContent="「"+t.c+"」";
+  document.getElementById("rgrp").textContent=g[0]+"グループ｜"+g[2];
+  document.getElementById("axes").innerHTML=L.map((l,k)=>{const p=pct[k],first=p>=50,v=first?p:100-p;
+    return `<div class="axis"><div class="lab"><span class="${first?'on':''}">${l[0]} ${l[2]}</span><span class="${first?'':'on'}">${l[3]} ${l[1]}</span></div>
+    <div class="bar"><i style="${first?'left:0':'right:0'};width:${v}%;background:${first?'var(--left)':'var(--right)'}"></i></div>
+    <div class="pct" style="color:${first?'var(--left)':'var(--right)'}">${v}% ${first?l[2]:l[3]}</div></div>`}).join("");
+  document.getElementById("rover").textContent=t.o;
+  document.getElementById("rwords").textContent=t.w;
+  const li=a=>a.map(x=>"<li>"+x+"</li>").join("");
+  document.getElementById("rhabit").innerHTML=li(t.h);
+  document.getElementById("rgood").innerHTML=li(t.g);
+  document.getElementById("rbad").innerHTML=li(t.b);
+  document.getElementById("atl").textContent=idt+"（"+(idt==="A"?"どっしり型":"気にしい型")+"）";
+  document.getElementById("rat").textContent=AT[idt];
+  document.getElementById("rgrow").innerHTML=li(t.gr);
+  document.getElementById("pcode").textContent=t.p[0];
+  document.getElementById("pname").textContent=TY[t.p[0]].n;
+  document.getElementById("pwhy").textContent=t.p[1];
+  // steps
+  const arts=[];const add=k=>{if(ART[k]&&!arts.find(a=>a[0]===ART[k][0]))arts.push(ART[k])};
+  add(code[3]==="E"?"E":"G");add(code[2]);if(code[0]==="U"&&code[3]==="E")add("E2");add(code[1]==="M"?"K":"C");add("C");
+  const links=arts.slice(0,2).map(a=>`<a href="${NOTE+a[0]}" target="_blank" rel="noopener">${a[1]}</a>`).join("<br>");
+  document.getElementById("steps").innerHTML=`
+   <li><b>来月の一歩を1つ決める</b>${t.s.map(x=>"・"+x).join("<br>")}</li>
+   <li><b>今月の「流れるお金」を計算する</b>なんとなく出ていくお金を12倍すると、1年でいくら消えているかが見えます。<br><a href="#calc">このページの下で計算する ↓</a></li>
+   <li><b>あなたのタイプに合う記事を読む</b>${links}</li>`;
+  grid("grid16b","legend2",code);
+  show("result");
+  (document.fonts?document.fonts.ready:Promise.resolve()).then(drawShare);
+}
+function shade(hex){const n=parseInt(hex.slice(1),16);const f=v=>Math.max(0,Math.round(v*.72));return "#"+[f(n>>16),f(n>>8&255),f(n&255)].map(v=>v.toString(16).padStart(2,"0")).join("")}
+function rr(x,X,Y,W,H,r){x.beginPath();x.moveTo(X+r,Y);x.arcTo(X+W,Y,X+W,Y+H,r);x.arcTo(X+W,Y+H,X,Y+H,r);x.arcTo(X,Y+H,X,Y,r);x.arcTo(X,Y,X+W,Y,r);x.closePath()}
+function fit(x,txt,max,start,min,weight,F){let s=start;do{x.font=`${weight} ${s}px ${F}`;s-=2}while(x.measureText(txt).width>max&&s>min)}
+function drawShare(){
+  const c=document.getElementById("share"),x=c.getContext("2d"),W=1080,H=1350,col=RES.g[1],F='"Zen Maru Gothic","Hiragino Maru Gothic ProN",sans-serif';
+  x.fillStyle="#FFF8EC";x.fillRect(0,0,W,H);
+  const gr=x.createLinearGradient(0,0,W,600);gr.addColorStop(0,col);gr.addColorStop(1,shade(col));
+  x.fillStyle=gr;rr(x,50,50,W-100,600,48);x.fill();
+  x.fillStyle="rgba(255,255,255,.12)";x.beginPath();x.arc(W-120,110,170,0,Math.PI*2);x.fill();
+  x.textAlign="center";x.fillStyle="#fff";
+  x.font=`700 42px ${F}`;x.fillText("わたしのお金タイプは…",W/2,150);
+  x.font=`900 64px ${F}`;x.globalAlpha=.9;x.fillText(RES.code+"-"+RES.idt,W/2,250);x.globalAlpha=1;
+  fit(x,RES.t.n,900,108,60,900,F);x.fillText(RES.t.n,W/2,390);
+  fit(x,"「"+RES.t.c+"」",900,44,28,700,F);x.fillText("「"+RES.t.c+"」",W/2,490);
+  x.font=`700 34px ${F}`;x.globalAlpha=.9;x.fillText(RES.g[0]+"グループ",W/2,580);x.globalAlpha=1;
+  L.forEach((l,k)=>{const y=730+k*92,p=RES.pct[k],first=p>=50,v=first?p:100-p;
+    x.textAlign="left";x.fillStyle=first?"#1E2A38":"#8A93A0";x.font=`900 34px ${F}`;x.fillText(l[2],80,y+12);
+    x.textAlign="right";x.fillStyle=first?"#8A93A0":"#1E2A38";x.fillText(l[3],1000,y+12);
+    x.fillStyle="#EDE4D3";rr(x,260,y-14,560,28,14);x.fill();
+    x.fillStyle=first?"#E8902A":"#3A78C9";
+    if(first){rr(x,260,y-14,Math.max(28,560*v/100),28,14)}else{const w=Math.max(28,560*v/100);rr(x,820-w,y-14,w,28,14)}x.fill();});
+  x.textAlign="center";x.fillStyle="#D62E2E";x.font=`900 42px ${F}`;x.fillText("あなたは何タイプ？ 30問・約5分",W/2,1225);
+  x.fillStyle="#1F3A5F";x.font=`700 32px ${F}`;x.fillText("お金の16タイプ診断｜たっちゃん｜使って増やす会社員のお金帳",W/2,1288);
+}
+function savePng(){const a=document.createElement("a");a.download="okane16-"+RES.code+".png";a.href=document.getElementById("share").toDataURL("image/png");a.click()}
+function compare(){
+  const v=[0,1,2,3].map(k=>Number((document.getElementById("m"+k).value||"0").replace(/[^0-9]/g,"")));
+  const tot=v.reduce((a,b)=>a+b,0),el=document.getElementById("cmp");
+  if(!tot){el.innerHTML='<p class="note">金額を1つ以上入れてください。</p>';return}
+  const cols=["var(--fuyasu)","var(--tanoshimu)","var(--seikatsu)","var(--nagareru)"],nm=["増やす","楽しむ","生活","流れる"];
+  const me=v.map(n=>n/tot*100);
+  el.innerHTML=`<div class="stack">${me.map((w,k)=>`<span style="width:${w}%;background:${cols[k]}"></span>`).join("")}</div>
+   <div class="note">${me.map((w,k)=>`${nm[k]} ${Math.round(w)}%`).join("・")}</div>
+   <div class="card" style="margin:16px 0 0;background:var(--bg)">「流れる」を12倍すると、1年で<br><span class="big">${(v[3]*12).toLocaleString()}円</span>
+   <p class="note" style="margin:6px 0 0">これを「増やす」に回せたら、それだけで1年の投資額が変わります。</p></div>
+   <p class="note">参考：単身・勤労者世帯（34歳以下）の消費支出は月約17.9万円です（総務省「家計調査」2025年）。</p>`;
+}
+</script>
+</body>
+</html>
