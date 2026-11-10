@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>会社の制度 使いこなし16タイプ診断｜たっちゃん</title>
+<meta name="description" content="20問・約3分。給与明細・福利厚生・企業型DCなど、会社の制度をどれだけ使いこなせているかを16タイプで診断。今すぐ見るべき制度もわかります。">
+<meta property="og:title" content="会社の制度 使いこなし16タイプ診断">
+<meta property="og:description" content="20問・約3分。あなたが今すぐ見るべき会社の制度がわかります。">
+<meta property="og:image" content="https://tatchan-okanecho.github.io/seido/og.png">
+<meta property="og:url" content="https://tatchan-okanecho.github.io/seido/">
+<meta name="twitter:card" content="summary_large_image">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1C345C;--cream:#FFF9EC;--org:#F08C1E;--red:#D63031;--gold:#E8B428;--ink:#1E2A38;--sub:#5F6A79;--line:#EDE4D3;--card:#fff}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:"Noto Sans JP",sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:560px;margin:0 auto;padding:0 16px 40px}
+header{background:var(--navy);color:#fff;text-align:center;padding:22px 16px 26px}
+.pill{display:inline-block;background:var(--org);color:#fff;font-weight:900;border-radius:999px;padding:6px 18px;font-size:14px}
+.by{color:#BFCDE6;font-size:12px;font-weight:700;margin-top:8px}
+h1{margin:14px 0 4px;font-size:22px;font-weight:900;line-height:1.35}h1 b{display:block;color:#FFD650;font-size:30px}
+.card{background:var(--card);border:2px solid var(--line);border-radius:18px;padding:18px;margin:16px 0;box-shadow:0 5px 0 #E1D7C3}
+.btn{display:block;width:100%;border:0;border-radius:999px;background:var(--red);color:#fff;font-weight:900;font-size:18px;padding:16px;cursor:pointer;margin-top:14px;font-family:inherit}
+.btn.sub{background:#fff;color:var(--navy);border:2px solid var(--navy)}
+.list li{margin:6px 0;font-weight:700}.small{font-size:12px;color:var(--sub)}
+.hide{display:none}
+.bar{height:8px;background:var(--line);border-radius:99px;overflow:hidden;margin:14px 0 4px}.bar i{display:block;height:100%;background:var(--org);transition:width .3s}
+.qn{font-weight:900;color:var(--org)}.qt{font-size:20px;font-weight:900;line-height:1.5;margin:8px 0 18px;min-height:60px}
+.sc{display:flex;justify-content:space-between;align-items:center;gap:6px}.sc button{border-radius:50%;border:3px solid var(--navy);background:#fff;cursor:pointer;padding:0}
+.sc button.on{background:var(--navy)}.lab{display:flex;justify-content:space-between;font-size:12px;font-weight:700;color:var(--sub);margin-top:8px}
+.rhead{background:var(--navy);color:#fff;border-radius:18px;padding:20px;text-align:center}.code{font-size:14px;font-weight:900;letter-spacing:.2em;color:#FFD650}.rname{font-size:28px;font-weight:900;margin:6px 0}.rc{font-weight:700;color:#DDE6F5}
+h3{font-size:16px;margin:0 0 8px;color:var(--navy)}.ax{margin:10px 0}.ax .t{display:flex;justify-content:space-between;font-size:13px;font-weight:700}
+.rec li{background:#FFF4E2;border-left:6px solid var(--org);border-radius:8px;padding:10px 12px;list-style:none;margin:8px 0;font-weight:700}.rec{padding:0;margin:0}
+a{color:var(--red);font-weight:700}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;font-size:10px;font-weight:700;text-align:center}.grid div{background:#fff;border:2px solid var(--line);border-radius:10px;padding:6px 2px;line-height:1.3}.grid div.me{border-color:var(--gold);background:#FFF8D9}
+footer{text-align:center;font-size:11px;color:var(--sub);margin-top:24px}
+</style></head><body>
+<header><span class="pill">会社の制度を10秒で</span><div class="by">たっちゃん｜給与明細と会社の制度</div><h1>あなたはどのタイプ？<b>会社の制度<br>使いこなし診断</b></h1></header>
+<div class="wrap">
+<section id="top">
+ <div class="card"><b>20問・約3分。</b>給与明細・福利厚生・企業型DCなど、会社のお金の制度とのつき合い方を16タイプで診断します。
+ <ul class="list"><li>あなたのタイプと、強み・落とし穴</li><li>今すぐ見るべき会社の制度3つ</li><li>タイプに合う解説記事</li></ul>
+ <button class="btn" onclick="start()">無料で診断する</button><p class="small">登録なし・回答は保存されません</p></div>
+ <div class="card"><h3>16タイプ</h3><div class="grid" id="g0"></div></div>
+</section>
+<section id="quiz" class="hide"><div class="bar"><i id="pb"></i></div>
+ <div class="card"><div class="qn" id="qn"></div><div class="qt" id="qt"></div><div class="sc" id="sc"></div><div class="lab"><span>そう思う</span><span>そう思わない</span></div></div>
+ <button class="btn sub" onclick="back()">← もどる</button></section>
+<section id="result" class="hide">
+ <div class="rhead"><div class="code" id="rcode"></div><div class="rname" id="rname"></div><div class="rc" id="rc"></div></div>
+ <div class="card"><p id="ro" style="margin:0;line-height:1.8"></p></div>
+ <div class="card"><h3>あなたの傾向</h3><div id="axes"></div></div>
+ <div class="card"><h3>強み</h3><p id="rg" style="margin:0"></p><h3 style="margin-top:14px">落とし穴</h3><p id="rb" style="margin:0"></p></div>
+ <div class="card"><h3>今すぐ見るべき会社の制度3つ</h3><ul class="rec" id="rrec"></ul></div>
+ <div class="card"><h3>タイプに合う解説記事</h3><div id="rart" style="line-height:2"></div></div>
+ <div class="card" style="text-align:center"><b>結果をスクショして、ストーリーでシェアしてね</b><a class="btn" style="text-decoration:none" href="https://www.instagram.com/tatchan_okanecho/" target="_blank" rel="noopener">インスタで毎日の解説を見る</a><button class="btn sub" onclick="start()">もう一度診断する</button></div>
+ <div class="card"><h3>16タイプ</h3><div class="grid" id="g1"></div></div>
+</section>
+<footer>※診断は会社の制度とのつき合い方の傾向を見るものです。制度の有無や内容は会社によって異なります。<br>© たっちゃん｜給与明細と会社の制度</footer>
+</div>
+<script>
+const D={"Q": [[0, 0, "給与明細は、毎月ひととおり目を通す"], [0, 0, "会社の福利厚生の一覧を見たことがある"], [0, 1, "年末調整の書類は、言われたとおりに出すだけだ"], [0, 1, "会社のお金の制度は、知らなくても困らないと思う"], [0, 0, "新しい制度の案内メールは、すぐ開いて読む"], [1, 0, "給料が入ったら、先に貯める分を分けている"], [1, 0, "天引きで勝手に貯まるしくみは好きだ"], [1, 1, "自由に使えるお金は、手元に多くあってほしい"], [1, 1, "財形や持株会の天引きは、自由に使えなくなるので苦手だ"], [1, 1, "いくら残ったかより、何に使えたかを大事にしたい"], [2, 0, "多少増えたり減ったりしても、長い目で増える方がいい"], [2, 1, "元本が減るのは、少しでもイヤだ"], [2, 0, "自分の会社の株を持つことに、抵抗はない"], [2, 1, "保険や保障は、しっかり入っておきたい"], [2, 0, "余ったお金は、投資に回したい"], [3, 0, "会社の制度で用意されているなら、まずそれを使う"], [3, 1, "NISAやiDeCoは、自分で口座を作って選びたい"], [3, 0, "保養所や社割など、会社の特典はよく使う"], [3, 1, "会社に頼らず、自分でお金を増やしたい"], [3, 0, "総務や先輩に、制度のことを聞くのは平気だ"]], "TY": {"SPAC": ["制度フル活用の攻略家", "会社の制度を、使えるだけ使って増やす", "制度を調べるのが苦にならず、天引きで先取りして、増やす方にも積極的。会社が用意したしくみを、いちばん上手に使えるタイプです。", "持株会やマッチング拠出など「会社が上乗せしてくれる制度」を逃さない", "会社の制度に寄りすぎて、自社株や会社の商品に偏りやすい"], "SPAI": ["先取りで増やす自走型", "天引きで貯めて、増やすのは自分で", "制度はよく調べるけれど、増やす部分は自分で選びたいタイプ。先取りの習慣があるので、お金は自然と積み上がっていきます。", "仕組み化がうまく、ムリなく続けられる", "会社の上乗せ制度（奨励金・マッチング）を見落としがち"], "SPDC": ["鉄壁の制度マスター", "制度を知りつくして、しっかり守る", "給与明細も福利厚生もよく見ていて、守りを固めるのが得意。財形や健保の給付など、会社のセーフティネットを使いこなせます。", "手取りや控除の数字に強く、損をしにくい", "守りが強すぎて、増やすチャンスを逃しやすい"], "SPDI": ["コツコツ天引き職人", "決めたら淡々と、自分のペースで貯める", "制度をちゃんと確認したうえで、自分で決めたルールで先取り貯金するタイプ。派手さはないけれど、気づけば一番貯まっています。", "ルールを守る力が強く、ブレない", "会社の制度を使えば楽になる部分まで、自力でやりがち"], "SHAC": ["社内制度ハンター", "使えるものは全部使う、会社の特典の達人", "福利厚生や社割をよく調べて、楽しみにも増やすことにも使うタイプ。手元の自由も大事にしながら、会社の上乗せはしっかり取りにいきます。", "特典を見つけるアンテナが高い", "使う方に寄りすぎると、貯める仕組みが後回しに"], "SHAI": ["情報通のフリー投資家", "調べて、選んで、自分で増やす", "情報を集めるのが好きで、増やすことにも前向き。ただ、会社の制度より自分で選んだ方法を信じるタイプです。", "比較して選ぶ力が高い", "会社がタダでくれる上乗せ（奨励金・会社掛金）を軽く見がち"], "SHDC": ["福利厚生の目利き", "会社の特典で、暮らしを賢く守る", "保養所・補助・社割など、会社の福利厚生をよく知っていて、生活を守るのに使うタイプ。手元の自由も大事にしています。", "生活の満足度を落とさずに出費を減らせる", "増やす部分が手薄になりやすい"], "SHDI": ["慎重派リサーチャー", "よく調べて、慎重に決める", "制度もお金のこともよく調べるけれど、決めるのは慎重。自分で納得してから動きたいタイプです。", "調べる力と慎重さで大きな失敗をしにくい", "調べるだけで動くのが遅れ、制度の期限を逃しやすい"], "OPAC": ["おまかせ持株ホルダー", "天引きで、気づけば会社の株や積立が育っている", "細かいことは気にしないけれど、入社のときに入った持株会や積立が自動で育っているタイプ。結果的に上手にお金が回っています。", "放っておいても続く仕組みがある", "中身を見ていないので、偏りや手数料に気づきにくい"], "OPAI": ["気づけば積立の放置名人", "一度決めたら、あとは放置", "自分で始めた積立を、細かく見ずにコツコツ続けるタイプ。放置できるのは長期では強みです。", "感情に振り回されず、長く続けられる", "会社の制度（企業型DCの初期設定など）を見直していない可能性大"], "OPDC": ["天引きおまかせ安定型", "会社のしくみに乗って、安心して貯める", "財形や天引きなど、会社が用意したしくみで自然に貯まっているタイプ。安心感を大事にしています。", "手間をかけずに、確実に貯められる", "企業型DCが元本確保型のままなど、増やす余地を残しがち"], "OPDI": ["自動で貯める守り人", "自動で貯めて、減らさない", "先取り貯金を自動にして、あとは気にしないタイプ。お金が減るのが苦手で、守りを大事にしています。", "貯める力が安定している", "制度を調べないぶん、控除や給付の取りこぼしが起きやすい"], "OHAC": ["ノリで乗る社内派", "周りがやってるなら、自分もやってみる", "同期や先輩がやっている制度に、気軽に乗っかれるタイプ。行動は早いけれど、中身の確認はあと回し。", "始めるハードルが低く、行動が早い", "自分に合っているかを確認しないまま続けやすい"], "OHAI": ["気分屋インベスター", "気になったら、とりあえずやってみる", "手元の自由を大事にしつつ、増やすことにも興味があるタイプ。ノリで始めて、うまくいけば続けます。", "新しいことを試すフットワークが軽い", "会社の上乗せ制度をスルーして、自分でやって遠回りしがち"], "OHDC": ["会社まかせの安心派", "会社がなんとかしてくれる、と思っている", "会社の制度をなんとなく信頼していて、細かいことは任せているタイプ。安心感はあるけれど、損していても気づきにくいです。", "ストレスが少なく、穏やかにお金と付き合える", "知らないうちに使える制度を逃している可能性が高い"], "OHDI": ["今を楽しむ自由人", "今の自分に、お金を使いたい", "お金は今の楽しみに使いたいタイプ。制度にはあまり興味がないけれど、手元の満足度は高めです。", "使い方に迷いがなく、満足度が高い", "年末調整や住民税など、知らないと損する話をスルーしがち"]}, "REC": {"S": "企業型DCのマッチング拠出が使えるか確認する", "O": "企業型DCに一度ログインして、商品と残高を見る", "P": "財形と持株会の「奨励金・利率」を比べる", "H": "有給とカフェテリアプランを使い切る計画を立てる", "A": "持株会の奨励金率と、DCの商品の配分を見直す", "D": "健保の付加給付と団体保険の中身を確認する", "C": "福利厚生の一覧（保養所・資格支援・社割）を全部見る", "I": "iDeCoとの併用条件と、NISAの枠を確認する"}, "ART": {"S": ["nd9b1446583c1", "年末調整で12月の給料が増えるのはなぜ？"], "O": ["n25e3ed2d0f93", "企業型DC、入社したときの設定のまま放置してない？"], "P": ["na5b4c62200e3", "ボーナスの手取りは額面の何割？"], "H": ["nfbd22ca56085", "社会人2年目の6月、手取りが減るのはなぜ？住民税のしくみ"], "A": ["n25e3ed2d0f93", "企業型DC、入社したときの設定のまま放置してない？"], "D": ["nf6b1ae598827", "生命保険料控除でいくら戻る？"], "C": ["n087806db71d5", "福利厚生で旅行代が半額以上に"], "I": ["nf49f2c388d20", "ワンストップ特例はいつまで？"]}};
+const L=[["S","O","調べる派","おまかせ派"],["P","H","先取り派","手元派"],["A","D","攻め派","守り派"],["C","I","会社活用派","自分で派"]];
+const NOTE="https://note.com/genial_myrtle564/n/";
+let ans=[],i=0;
+function show(id){["top","quiz","result"].forEach(s=>document.getElementById(s).classList.toggle("hide",s!==id));scrollTo(0,0)}
+function grid(id,me){document.getElementById(id).innerHTML=Object.keys(D.TY).map(k=>`<div class="${k===me?'me':''}">${k}<br>${D.TY[k][0]}</div>`).join("")}
+function start(){ans=new Array(D.Q.length).fill(null);i=0;show("quiz");render()}
+function back(){if(i>0){i--;render()}else show("top")}
+function render(){const q=D.Q[i];document.getElementById("qn").textContent=`Q${i+1} / ${D.Q.length}`;document.getElementById("qt").textContent=q[2];document.getElementById("pb").style.width=(i/D.Q.length*100)+"%";
+ const sc=document.getElementById("sc");sc.innerHTML="";[44,36,28,36,44].forEach((s,k)=>{const b=document.createElement("button");b.style.width=b.style.height=s+"px";if(k<2)b.style.borderColor="var(--org)";if(k>2)b.style.borderColor="var(--navy)";if(k===2)b.style.borderColor="#B8B0A0";if(ans[i]===k)b.classList.add("on");b.onclick=()=>{ans[i]=k;if(i<D.Q.length-1){i++;setTimeout(render,120)}else finish()};sc.appendChild(b)})}
+function finish(){const sum=[0,0,0,0],cnt=[0,0,0,0];D.Q.forEach((q,k)=>{let s=(2-ans[k])/2;if(q[1]===1)s=-s;sum[q[0]]+=s;cnt[q[0]]++});
+ const pct=sum.map((v,k)=>Math.round(50+50*v/cnt[k]));const code=pct.map((p,k)=>p>=50?L[k][0]:L[k][1]).join("");const t=D.TY[code];
+ document.getElementById("rcode").textContent=code;document.getElementById("rname").textContent=t[0];document.getElementById("rc").textContent=t[1];document.getElementById("ro").textContent=t[2];document.getElementById("rg").textContent=t[3];document.getElementById("rb").textContent=t[4];
+ document.getElementById("axes").innerHTML=L.map((l,k)=>{const p=pct[k];return `<div class="ax"><div class="t"><span>${l[2]} ${p}%</span><span>${l[3]} ${100-p}%</span></div><div class="bar" style="margin:4px 0"><i style="width:${p}%"></i></div></div>`}).join("");
+ const r=[code[0],code[1],code[3]].map(c=>D.REC[c]);r.push(D.REC[code[2]]);document.getElementById("rrec").innerHTML=r.slice(0,3).map(x=>"<li>"+x+"</li>").join("");
+ const arts=[];[code[0],code[2],code[1],code[3]].forEach(c=>{const a=D.ART[c];if(a&&!arts.find(x=>x[0]===a[0]))arts.push(a)});document.getElementById("rart").innerHTML=arts.slice(0,2).map(a=>`<a href="${NOTE+a[0]}" target="_blank" rel="noopener">${a[1]}</a>`).join("<br>");
+ grid("g1",code);show("result")}
+grid("g0","");
+</script></body></html>
