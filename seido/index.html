@@ -74,3 +74,14 @@ function finish(){const sum=[0,0,0,0],cnt=[0,0,0,0];D.Q.forEach((q,k)=>{let s=(2
  grid("g1",code);show("result")}
 grid("g0","");
 </script></body></html>
+<script>
+(function(){var LAB="https://tatchan-okanecho.github.io/hub/";
+var M={S:["jiten.html","用語じてん","調べる派のあなたに。明細の用語をひとことで"],O:["nencho.html","年末調整チェック","おまかせ派でも9項目だけ確認"],A:["taishoku.html","退職金の税金計算","攻め派は将来の手取りも把握"],D:["calendar.html","お金のカレンダー","守り派は明細が変わる月を先に知る"],C:["yukyu.html","有給の日数","会社活用派は休みも制度として使う"],I:["zangyo.html","残業代の計算","自分で派は働いた分を自分で確認"]};
+function add(){var a=document.getElementById("axes");if(!a)return;var code=((document.getElementById("rcode")||{}).textContent||"").trim();if(code.length<4)return;var old=document.getElementById("labbox");if(old){if(old.getAttribute("data-c")===code)return;old.remove();}
+var ks=[code[0],code[2],code[3]];var h='<div style="font-weight:900;color:#1C345C;font-size:16px;margin-bottom:8px">あなたにおすすめのツール</div>';
+ks.forEach(function(k){var t=M[k];if(!t)return;h+='<a href="'+LAB+t[0]+'" style="display:block;background:#fff;border:1px solid #EDE4D3;border-radius:12px;padding:10px 12px;margin-bottom:8px;text-decoration:none;color:#1E2A38"><b style="color:#1C345C">'+t[1]+' ›</b><br><small style="color:#5F6A79">'+t[2]+'</small></a>'});
+h+='<a href="'+LAB+'" style="display:block;text-align:center;background:#F08C1E;color:#fff;font-weight:900;border-radius:99px;padding:12px;text-decoration:none;margin-top:4px">制度とお金ラボを開く</a>';
+var box=document.createElement("div");box.id="labbox";box.setAttribute("data-c",code);box.style.cssText="margin:18px 0;padding:16px;background:#FFF3E0;border-radius:16px";box.innerHTML=h;
+var host=a.parentElement;host.appendChild(box);}
+new MutationObserver(add).observe(document.body,{subtree:true,childList:true,characterData:true});})();
+</script>
