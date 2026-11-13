@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>会社員の制度とお金ラボ｜たっちゃん</title>
+<meta name="description" content="給与明細・手当・社会保険・年末調整・退職金。会社員の制度とお金を、計算ツール・用語じてん・診断でまとめて調べられる無料サイト。">
+<meta property="og:title" content="会社員の制度とお金ラボ｜たっちゃん">
+<meta property="og:description" content="給与明細・年末調整・退職金を、計算ツールと用語じてんで。無料。">
+<meta property="og:image" content="https://tatchan-okanecho.github.io/seido/og.png">
+<style>
+:root{--navy:#1c345c;--cream:#fff9ec;--orange:#f08c1e;--gold:#fac83c;--red:#d63031;--teal:#1e8278;--ink:#22303f;--muted:#5d6b7a;--card:#ffffff;--line:#e8e1d2}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:"Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:var(--navy)}
+.wrap{max-width:880px;margin:0 auto;padding:0 16px}
+header.hero{background:var(--navy);color:#fff;padding:36px 0 30px}
+.tag{display:inline-block;background:var(--orange);color:#fff;font-weight:800;border-radius:999px;padding:4px 14px;font-size:13px}
+.hero h1{font-size:clamp(26px,6vw,40px);line-height:1.3;margin:14px 0 8px;font-weight:900}
+.hero h1 span{color:var(--gold)}
+.hero p{margin:0;color:#d3dcea;font-size:15px}
+.who{display:flex;gap:12px;align-items:center;margin-top:18px;font-size:13px;color:#b9c6da}
+.who b{color:#fff}
+nav.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:-18px auto 8px;position:relative}
+nav.cards a{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;text-decoration:none;color:var(--ink);box-shadow:0 4px 0 #ece3cf;display:block}
+nav.cards a b{display:block;font-size:16px;color:var(--navy)}
+nav.cards a small{color:var(--muted);font-size:12px}
+nav.cards .chip{display:inline-block;font-size:11px;font-weight:800;color:#fff;border-radius:6px;padding:1px 8px;margin-bottom:6px}
+section{padding:28px 0;border-bottom:1px dashed var(--line)}
+section h2{font-size:22px;margin:0 0 6px;color:var(--navy);font-weight:900}
+section .lead{color:var(--muted);margin:0 0 16px;font-size:14px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
+label{display:block;font-weight:700;font-size:14px;margin:10px 0 4px}
+input[type=number],input[type=search]{width:100%;font-size:18px;padding:10px 12px;border:2px solid var(--line);border-radius:10px;background:#fff}
+input:focus{outline:none;border-color:var(--orange)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:520px){.row{grid-template-columns:1fr}}
+.result{margin-top:16px;background:#f7f3ea;border-radius:12px;padding:14px}
+.result .big{font-size:28px;font-weight:900;color:var(--navy)}
+.result table{width:100%;border-collapse:collapse;font-size:14px;margin-top:8px}
+.result td{padding:6px 4px;border-bottom:1px solid var(--line)}
+.result td:last-child{text-align:right;font-variant-numeric:tabular-nums;font-weight:700}
+.note{font-size:12px;color:var(--muted);margin-top:10px}
+.check li{list-style:none;margin:0 0 8px;padding:10px 12px;background:#fff;border:1px solid var(--line);border-radius:10px;display:flex;gap:10px;align-items:flex-start}
+.check{padding:0;margin:0}
+.check input{margin-top:5px;width:18px;height:18px;accent-color:var(--teal)}
+.check small{display:block;color:var(--muted)}
+.prog{height:10px;background:#eee4d0;border-radius:99px;overflow:hidden;margin:6px 0 14px}
+.prog i{display:block;height:100%;background:var(--teal);width:0;transition:width .3s}
+.terms{display:grid;gap:8px;margin-top:12px}
+.term{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.term b{color:var(--navy)}
+.term .cat{font-size:11px;font-weight:800;color:#fff;border-radius:5px;padding:0 6px;margin-right:6px}
+.c-明細{background:var(--orange)}.c-税金{background:var(--red)}.c-社保{background:var(--teal)}.c-制度{background:#4670c8}
+.arts{display:grid;gap:10px}
+.arts a{display:block;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;text-decoration:none;color:var(--ink)}
+.arts a small{color:var(--muted)}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.btn{display:inline-block;background:var(--orange);color:#fff;font-weight:800;border-radius:999px;padding:10px 18px;text-decoration:none}
+.btn.navy{background:var(--navy)}
+footer{padding:28px 0 40px;font-size:12px;color:var(--muted)}
+</style>
+</head>
+<body>
+<header class="hero"><div class="wrap">
+  <span class="tag">会社員の制度とお金ラボ</span>
+  <h1>給与明細と会社の制度、<br><span>ぜんぶここで調べられる。</span></h1>
+  <p>手当・社会保険・年末調整・退職金。インスタで出している「10秒でわかる」を、計算ツールと用語じてんにまとめました。無料です。</p>
+  <div class="who"><b>たっちゃん</b>商社で働く会社員｜簿記2級・FP3級</div>
+</div></header>
+
+<div class="wrap">
+<nav class="cards">
+  <a href="#taishoku"><span class="chip" style="background:var(--red)">計算</span><b>退職金の税金</b><small>勤続年数から手取りを計算</small></a>
+  <a href="#nencho"><span class="chip" style="background:var(--red)">チェック</span><b>2026年の年末調整</b><small>出す前の確認リスト</small></a>
+  <a href="#jiten"><span class="chip" style="background:var(--orange)">じてん</span><b>給与明細の用語</b><small>あの行、何の意味？</small></a>
+  <a href="https://tatchan-okanecho.github.io/seido/"><span class="chip" style="background:#9a5ac0">診断</span><b>制度の使いこなし診断</b><small>20問・約3分</small></a>
+  <a href="#articles"><span class="chip" style="background:#4670c8">読む</span><b>くわしい解説</b><small>noteの記事一覧</small></a>
+</nav>
+
+<section id="taishoku">
+  <h2>退職金の税金かんたん計算</h2>
+  <p class="lead">退職金は「退職所得控除」と「2分の1」のおかげで、給料よりずっと税金が軽くなります。金額と勤続年数を入れるだけ。</p>
+  <div class="panel">
+    <div class="row">
+      <div><label for="tk-amt">退職金の額（万円）</label><input id="tk-amt" type="number" inputmode="decimal" min="0" value="2000"></div>
+      <div><label for="tk-yrs">勤続年数（年）※1年未満は切り上げ</label><input id="tk-yrs" type="number" inputmode="numeric" min="1" value="30"></div>
+    </div>
+    <div class="result" id="tk-out" aria-live="polite"></div>
+    <p class="note">※会社に「退職所得の受給に関する申告書」を出した場合の一般的な計算です。勤続5年以下・役員・障害退職・同じ年に複数の退職金がある場合などは計算が異なります。住民税は10%で計算しています。</p>
+  </div>
+</section>
+
+<section id="nencho">
+  <h2>2026年の年末調整チェックリスト</h2>
+  <p class="lead">今年は基礎控除や扶養の基準が変わる年。「去年と同じ」で出す前に、ひとつずつ確認してください。チェックはこの端末に保存されます。</p>
+  <div class="panel">
+    <div class="prog"><i id="nc-bar"></i></div>
+    <ul class="check" id="nc-list"></ul>
+    <p class="note">※2026年11月時点の公開情報にもとづく一般的な内容です。基礎控除104万円は合計所得489万円以下（給与のみなら年収約665万円以下）の場合。くわしくは国税庁の資料や勤務先の案内で確認してください。</p>
+  </div>
+</section>
+
+<section id="jiten">
+  <h2>給与明細・会社の制度 用語じてん</h2>
+  <p class="lead">明細の「この行なに？」を、ひとことで。キーワードで探せます。</p>
+  <input id="jt-q" type="search" placeholder="例：住民税、通勤、40歳、ボーナス" aria-label="用語を検索">
+  <div class="terms" id="jt-list"></div>
+</section>
+
+<section id="articles">
+  <h2>くわしい解説（note）</h2>
+  <p class="lead">インスタの10秒では書ききれない中身を、記事にしています。</p>
+  <div class="arts">
+    <a href="https://note.com/genial_myrtle564/n/n792a392f536f"><b>2026年の年末調整、去年と同じに書くと損？変更点6つ</b><br><small>年末調整｜基礎控除104万円・扶養136万円</small></a>
+    <a href="https://note.com/genial_myrtle564/n/n4d3c0e4d42a2"><b>食事手当は課税、社食の補助は非課税？税金がかからない手当とお金6つ</b><br><small>手当｜退職金の税金も</small></a>
+    <a href="https://note.com/genial_myrtle564/n/n3a3dad981de4"><b>給与明細の控除欄、何に引かれてる？額面の約2割が引かれる理由</b><br><small>控除欄｜金額が変わる3つの月</small></a>
+    <a href="https://note.com/genial_myrtle564/n/naade01e97067"><b>給与明細の「手当」、全部説明できる？</b><br><small>手当｜通勤手当・残業代・住宅手当</small></a>
+    <a href="https://note.com/genial_myrtle564/n/nfbd22ca56085"><b>社会人2年目の6月、手取りが減るのはなぜ？住民税のしくみ</b><br><small>住民税</small></a>
+    <a href="https://note.com/genial_myrtle564/n/nd9b1446583c1"><b>年末調整で12月の給料が増えるのはなぜ？</b><br><small>年末調整</small></a>
+    <a href="https://note.com/genial_myrtle564/n/n25e3ed2d0f93"><b>企業型DC、入社したときの設定のまま放置してない？</b><br><small>企業型DC・マッチング拠出</small></a>
+    <a href="https://note.com/genial_myrtle564/n/n0a0cd1e60f05"><b>会社員の年末お金チェックリスト2026（有料・冒頭無料）</b><br><small>年末にやる手続き12個を期限順に</small></a>
+  </div>
+  <div class="cta">
+    <a class="btn" href="https://www.instagram.com/tatchan_okanecho/">インスタで毎日2本</a>
+    <a class="btn navy" href="https://note.com/genial_myrtle564">noteをフォロー</a>
+  </div>
+</section>
+
+<footer>
+  このサイトの内容は2026年11月時点の公開情報をもとにした一般的な説明です。税額や制度の扱いは、所得・家族構成・会社の規定によって異なります。最終的な判断は国税庁などの一次情報や勤務先の案内で確認してください。<br>© たっちゃん｜給与明細と会社の制度
+</footer>
+</div>
+
+<script>
+(function(){
+  // ---- 退職金の税金 ----
+  function incomeTax(x){ // x: 課税所得(円, 1000円未満切捨て)
+    var t=[[1950000,0.05,0],[3300000,0.10,97500],[6950000,0.20,427500],[9000000,0.23,636000],[18000000,0.33,1536000],[40000000,0.40,2796000],[Infinity,0.45,4796000]];
+    for(var i=0;i<t.length;i++){ if(x<=t[i][0]) return Math.max(0, x*t[i][1]-t[i][2]); }
+  }
+  function yen(n){ return Math.round(n).toLocaleString('ja-JP')+'円'; }
+  function calcTK(){
+    var amt=Math.max(0,parseFloat(document.getElementById('tk-amt').value)||0)*10000;
+    var yrs=Math.max(1,Math.ceil(parseFloat(document.getElementById('tk-yrs').value)||1));
+    var ded = yrs<=20 ? Math.max(800000, 400000*yrs) : 8000000 + 700000*(yrs-20);
+    var taxable = Math.max(0, amt-ded)/2;
+    taxable = Math.floor(taxable/1000)*1000;
+    var it = Math.floor(incomeTax(taxable)*1.021);
+    var rt = Math.floor(taxable*0.10/100)*100;
+    var net = amt - it - rt;
+    var out=document.getElementById('tk-out');
+    var msg = amt<=ded ? '<div class="big">税金は0円</div><div>退職所得控除（'+yen(ded)+'）の範囲内です。</div>'
+      : '<div>手取りの目安</div><div class="big">'+yen(net)+'</div>';
+    out.innerHTML = msg + '<table>'+
+      '<tr><td>退職所得控除（非課税になる額）</td><td>'+yen(ded)+'</td></tr>'+
+      '<tr><td>税金の対象（控除後の半分）</td><td>'+yen(taxable)+'</td></tr>'+
+      '<tr><td>所得税（復興特別所得税こみ）</td><td>'+yen(it)+'</td></tr>'+
+      '<tr><td>住民税（10%）</td><td>'+yen(rt)+'</td></tr>'+
+      '<tr><td>税金の合計</td><td>'+yen(it+rt)+'</td></tr></table>'+
+      (yrs<=5?'<p class="note" style="color:#d63031">勤続5年以下の場合、条件により「2分の1」が使えない計算になることがあります。</p>':'');
+  }
+  ['tk-amt','tk-yrs'].forEach(function(id){ document.getElementById(id).addEventListener('input',calcTK); });
+  calcTK();
+
+  // ---- 年末調整チェック ----
+  var items=[
+    ['今年の保険のハガキ（控除証明書）を全部そろえた','生命保険・地震保険・個人年金。去年の使い回しはNG'],
+    ['iDeCoの掛金の証明書を出した','「小規模企業共済等掛金控除」の欄に書く'],
+    ['家族の今年の見込み年収を確認した','給与だけの家族なら年収136万円以下が扶養の目安（去年は123万円）'],
+    ['「所得の見積額」を年収ではなく所得で書いた','年収から給与所得控除を引いた額。年収のまま書くと控除の区分を誤ることも'],
+    ['23歳未満の子がいるなら、生命保険料控除の上限が増えることを確認した','新しい生命保険の一般枠が4万円→6万円（合計上限12万円は同じ）'],
+    ['年の途中で入社した人は、前の会社の源泉徴収票を出した','出さないと、年末調整で1年分を精算できない'],
+    ['住宅ローン控除の書類がある人は、今年の分を出した','2年目以降は年末調整で控除できる'],
+    ['ふるさと納税は年末調整ではなく、ワンストップか確定申告で手続きする','医療費控除も確定申告'],
+    ['12月（または1月）の給与明細で、戻ってきた額を確認する','今年は1〜11月が前のルールなので、戻る人が多い見込み（全員ではない）']
+  ];
+  var KEY='hub-nencho-2026', state={};
+  try{ state=JSON.parse(localStorage.getItem(KEY)||'{}')||{}; }catch(e){ state={}; }
+  var ul=document.getElementById('nc-list');
+  items.forEach(function(it,i){
+    var li=document.createElement('li'); var cb=document.createElement('input'); cb.type='checkbox'; cb.id='nc'+i; cb.checked=!!state[i];
+    var lb=document.createElement('label'); lb.htmlFor='nc'+i; lb.style.margin='0'; lb.style.fontWeight='600';
+    lb.textContent=it[0]; var sm=document.createElement('small'); sm.textContent=it[1]; lb.appendChild(sm);
+    cb.addEventListener('change',function(){ state[i]=cb.checked; try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){} bar(); });
+    li.appendChild(cb); li.appendChild(lb); ul.appendChild(li);
+  });
+  function bar(){ var n=0; items.forEach(function(_,i){ if(state[i]) n++; }); document.getElementById('nc-bar').style.width=(n/items.length*100)+'%'; }
+  bar();
+
+  // ---- 用語じてん ----
+  var T=[
+    ['明細','基本給','手当を除いた給料の土台。残業代や賞与の計算のもとになることが多い。'],
+    ['明細','時間外手当（残業代）','法定時間をこえた分は25%以上の割増。月60時間をこえた分は50%以上。'],
+    ['明細','深夜手当','22時〜5時の労働は25%以上の割増。残業と重なると足し算で50%以上。'],
+    ['明細','休日手当','法定休日の労働は35%以上の割増。'],
+    ['明細','通勤手当','電車・バスなら月15万円まで所得税がかからない。ただし社会保険料の計算には入る。'],
+    ['明細','住宅手当','家賃の補助。給料と同じく課税。会社が借りる「社宅」は条件を満たせば非課税。'],
+    ['明細','食事手当','現金でもらうと課税。社食などの補助は、本人が半分以上払い、会社負担が月7,500円以下なら非課税（2026年4月〜）。'],
+    ['明細','在宅勤務手当','仕事で使った分を実費で精算するなら非課税。毎月決まった額を渡すだけなら課税。'],
+    ['明細','役職手当','管理監督者にあたると残業代は出なくなる（深夜の割増は出る）。'],
+    ['明細','総支給額（額面）','手当も含めた支給の合計。求人票の月給はこの額面で書かれる。'],
+    ['明細','差引支給額（手取り）','総支給額から社会保険料・税金・天引きを引いた、振り込まれる額。'],
+    ['社保','健康保険料','病院代が3割負担になるもと。会社と半分ずつ負担。'],
+    ['社保','介護保険料','40歳になると健康保険料に上乗せされて引かれ始める。'],
+    ['社保','厚生年金保険料','将来の年金になる。会社と半分ずつ負担。'],
+    ['社保','雇用保険料','失業手当や育休中の給付金のもと。'],
+    ['社保','標準報酬月額','4〜6月の給料（残業代・通勤手当こみ）の平均で決まり、9月から1年間の保険料のもとになる。'],
+    ['社保','傷病手当金','病気やけがで休むと、給料の約3分の2が健康保険から出る。'],
+    ['社保','高額療養費','1か月の医療費が上限をこえると、こえた分が戻る。'],
+    ['社保','付加給付','組合健保などが独自に上乗せする給付。自己負担がさらに軽くなることも。'],
+    ['税金','所得税','毎月は概算で引かれ、年末調整で1年分を精算する。'],
+    ['税金','住民税','前の年の所得で決まり、6月〜翌5月の12回で引かれる。ボーナスからは引かれない。'],
+    ['税金','年末調整','1年分の所得税を12月（または1月）に計算しなおして、過不足を精算する手続き。'],
+    ['税金','源泉徴収票','1年分の給料と所得税の確定版。翌年1月末までにもらえる。'],
+    ['税金','基礎控除','だれでも受けられる控除。2026年分は合計所得489万円以下で104万円。'],
+    ['税金','給与所得控除','会社員の「必要経費」にあたる控除。2026年分は最低74万円。'],
+    ['税金','扶養控除・配偶者控除','家族の所得が62万円以下（給与だけなら年収136万円以下）なら対象になりうる（2026年分）。'],
+    ['税金','生命保険料控除','払った保険料に応じて所得から引ける。23歳未満の子がいると一般枠の上限が6万円に（2026年分〜）。'],
+    ['税金','退職所得控除','退職金の非課税枠。勤続20年まで1年40万円、それ以降は1年70万円。'],
+    ['制度','企業型DC','会社が掛金を出し、自分で運用する年金。何も選ばないと会社が決めた商品で運用される。'],
+    ['制度','マッチング拠出','企業型DCに自分も上乗せできる制度。自分の掛金は全額所得控除。2026年4月から会社の掛金をこえて出せる。'],
+    ['制度','財形貯蓄','給料からの天引きで先取り貯金できる制度。'],
+    ['制度','持株会','自社株を給料天引きで買える制度。奨励金が上乗せされることが多い。'],
+    ['制度','社宅','会社が借りた部屋を社員に貸す制度。決められた家賃の半分以上を払えば、会社負担分は非課税。'],
+    ['制度','有給休暇','入社6か月で10日。時効は2年。年10日以上もらえる人は、年5日取得させることが会社の義務。'],
+    ['明細','賞与（ボーナス）','社会保険料と所得税は引かれるが、住民税は引かれない。']
+  ];
+  var list=document.getElementById('jt-list'), q=document.getElementById('jt-q');
+  function render(){
+    var s=(q.value||'').trim(); list.innerHTML='';
+    T.filter(function(t){ return !s || (t[1]+t[2]+t[0]).indexOf(s)>=0; }).forEach(function(t){
+      var d=document.createElement('div'); d.className='term';
+      var c=document.createElement('span'); c.className='cat c-'+t[0]; c.textContent=t[0];
+      var b=document.createElement('b'); b.textContent=t[1];
+      var p=document.createElement('div'); p.textContent=t[2]; p.style.fontSize='14px';
+      d.appendChild(c); d.appendChild(b); d.appendChild(p); list.appendChild(d);
+    });
+    if(!list.children.length){ list.innerHTML='<div class="term">見つかりませんでした。別のことばで探してみてください。</div>'; }
+  }
+  q.addEventListener('input',render); render();
+})();
+</script>
+</body>
+</html>
