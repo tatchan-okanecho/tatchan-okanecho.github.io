@@ -13,7 +13,7 @@ var I={
  insta:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>'
 };
 function tabbar(active){
-  var t=[['index.html','ホーム','home'],['tools.html','ツール','tool'],['jiten.html','じてん','book'],['yomu.html','読む','read'],['https://tatchan-okanecho.github.io/seido/','診断','star']];
+  var t=[['index.html','ホーム','home'],['tools.html','ツール','tool'],['jiten.html','辞典','book'],['yomu.html','読む','read'],['https://tatchan-okanecho.github.io/seido/','診断','star']];
   var h='<div class="tabbar"><nav>'+t.map(function(x){return '<a href="'+x[0]+'"'+(x[2]===active?' class="on"':'')+'>'+I[x[2]]+'<span>'+x[1]+'</span></a>';}).join('')+'</nav></div>';
   document.body.insertAdjacentHTML('beforeend',h);
   document.querySelectorAll('[data-ic]').forEach(function(e){e.innerHTML=I[e.getAttribute('data-ic')]||'';});
