@@ -19,4 +19,4 @@ function c(){var m=(+v('m'))*1e4,h=Math.max(1,+v('h')),o=Math.max(0,+v('o')),n=M
 var o1=Math.min(o,60),o2=Math.max(0,o-60),p1=r*1.25*o1,p2=r*1.5*o2,pn=r*.25*n,pk=r*1.35*k,t=p1+p2+pn+pk;
 document.getElementById('out').innerHTML='<div class="k">残業代のめやす（1か月）</div><div class="v">'+yen(t)+'</div><table><tr><td>1時間あたりの給料</td><td>'+yen(r)+'</td></tr><tr><td>残業60時間まで（×1.25）</td><td>'+yen(p1)+'</td></tr><tr><td>60時間こえ（×1.5）</td><td>'+yen(p2)+'</td></tr><tr><td>深夜の上乗せ（×0.25）</td><td>'+yen(pn)+'</td></tr><tr><td>法定休日（×1.35）</td><td>'+yen(pk)+'</td></tr></table>';}
 function v(i){return document.getElementById(i).value||0}
-['m','h','o','n','k'].forEach(function(i){document.getElementById(i).addEventListener('input',c)});c();</script></body></html>
+['m','h','o','n','k'].forEach(function(i){document.getElementById(i).addEventListener('input',c)});c();</script><script data-goatcounter="https://tatchan-lab.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body></html>

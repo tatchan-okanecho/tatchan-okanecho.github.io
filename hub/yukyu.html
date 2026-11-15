@@ -18,4 +18,4 @@ var i=Math.min(6,Math.floor((mo-6)/12)),days=T[d][i],nxt=i<6?(6+12*(i+1)-mo):nul
 var rows=T[d].map(function(x,j){return '<tr><td>'+(j===0?'6か月':(j+0.5)+'年'+(j===6?'以上':''))+'</td><td'+(j===i?' style="color:#f7c544"':'')+'>'+x+'日</td></tr>'}).join('');
 out.innerHTML='<div class="k">いま1年でもらえる日数</div><div class="v">'+days+'日</div>'+(nxt?'<div class="k">あと'+nxt+'か月で'+T[d][i+1]+'日にふえます</div>':'<div class="k">これ以上はふえません（上限）</div>')+'<table>'+rows+'</table>';}
 document.querySelectorAll('#seg button').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('#seg button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');d=+b.dataset.d;c();})});
-['yy','mm'].forEach(function(i){document.getElementById(i).addEventListener('input',c)});c();</script></body></html>
+['yy','mm'].forEach(function(i){document.getElementById(i).addEventListener('input',c)});c();</script><script data-goatcounter="https://tatchan-lab.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body></html>
