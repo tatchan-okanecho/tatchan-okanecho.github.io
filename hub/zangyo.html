@@ -4,7 +4,7 @@
 <meta name="theme-color" content="#fff7ea">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="app.css"><link rel="manifest" href="manifest.json"><link rel="apple-touch-icon" href="img/apple-touch-icon.png"></head><body><div class="app"><header class="top"><a class="back" href="tools.html" aria-label="戻る">‹</a><h1>残業代</h1></header><div class="pad">
+<link rel="stylesheet" href="app.css"><link rel="manifest" href="manifest.json"><link rel="apple-touch-icon" href="img/apple-touch-icon.png"></head><body><div class="app"><header class="top"><a class="back" href="tools.html" aria-label="戻る" onclick="if(document.referrer&&document.referrer.indexOf(location.host)>=0&&history.length>1){history.back();return false}">‹</a><h1>残業代</h1></header><div class="pad">
 <div class="tip"><img src="img/t_think.png" alt=""><div class="b">残業代は<b>「1時間あたりの給料×割増」</b>。60時間を超えた分と深夜は割増が上がります。</div></div>
 <div class="card">
 <div class="field"><label for="m">月給（残業代の計算に入る額）</label><div class="in"><input id="m" type="number" inputmode="decimal" value="30"><span class="u">万円</span></div><small>基本給＋多くの手当。通勤・家族・住宅手当などは入らないのが一般的</small></div>

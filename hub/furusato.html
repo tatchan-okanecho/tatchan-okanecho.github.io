@@ -1,0 +1,35 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ふるさと納税の上限｜制度とお金ラボ</title><meta name="description" content="年収と家族構成から、2026年分のふるさと納税の上限（自己負担2,000円で済む目安）を計算。主なふるさと納税サイトの一覧つき。">
+<meta property="og:title" content="ふるさと納税の上限｜制度とお金ラボ"><meta property="og:description" content="年収と家族構成から、2026年分のふるさと納税の上限（自己負担2,000円で済む目安）を計算。主なふるさと納税サイトの一覧つき。"><meta property="og:image" content="https://tatchan-okanecho.github.io/hub/img/og.png">
+<meta name="theme-color" content="#fff7ea">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="app.css"><link rel="manifest" href="manifest.json"><link rel="apple-touch-icon" href="img/apple-touch-icon.png"></head><body><div class="app"><header class="top"><a class="back" href="tools.html" aria-label="戻る" onclick="if(document.referrer&&document.referrer.indexOf(location.host)>=0&&history.length>1){history.back();return false}">‹</a><h1>ふるさと納税の上限</h1></header><div class="pad">
+<div class="tip"><img src="img/t_point.png" alt=""><div class="b">年収を入れると、<b>自己負担2,000円で済む上限の目安</b>が出ます。ぎりぎりではなく、<b>9割まで</b>が安心です。</div></div>
+<div class="card"><div class="field"><label for="a">年収（額面）</label><div class="in"><input id="a" type="number" inputmode="decimal" value="500"><span class="u">万円</span></div><small>源泉徴収票の「支払金額」。給与だけの人向け</small></div>
+<div class="field"><label for="s">社会保険料（1年分）</label><div class="in"><input id="s" type="number" inputmode="decimal" value="75"><span class="u">万円</span></div><small>分からなければ年収の15%（自動で入ります）</small></div>
+<div class="field"><label>配偶者控除</label><div class="seg" id="sp"><button data-v="0" class="on">なし</button><button data-v="1">あり</button></div><small>配偶者の年収が136万円以下（給与だけの場合）</small></div>
+<div class="field"><label for="k1">扶養している16〜18歳・23歳以上の家族</label><div class="in"><input id="k1" type="number" inputmode="numeric" value="0"><span class="u">人</span></div><small>16歳未満の子は入れません</small></div>
+<div class="field"><label for="k2">扶養している19〜22歳の家族</label><div class="in"><input id="k2" type="number" inputmode="numeric" value="0"><span class="u">人</span></div></div></div>
+<div class="res" id="out" aria-live="polite"></div>
+<div class="sec"><h3>年収別の目安（独身・社会保険料15%）</h3></div><div class="card" id="tbl"></div>
+<div class="sec"><h3>主なふるさと納税サイト</h3></div><div class="list"><a class="row" href="https://event.rakuten.co.jp/furusato/" target="_blank" rel="noopener"><span class="ic c-red" data-ic="gift"></span><span class="tx"><b>楽天ふるさと納税</b><small>楽天の会員IDでそのまま申し込める</small></span><span class="chev">›</span></a><a class="row" href="https://www.furusato-tax.jp/" target="_blank" rel="noopener"><span class="ic c-red" data-ic="gift"></span><span class="tx"><b>ふるさとチョイス</b><small>掲載自治体が多い老舗</small></span><span class="chev">›</span></a><a class="row" href="https://www.satofull.jp/" target="_blank" rel="noopener"><span class="ic c-red" data-ic="gift"></span><span class="tx"><b>さとふる</b><small>配送が早い返礼品が多い</small></span><span class="chev">›</span></a><a class="row" href="https://furunavi.jp/" target="_blank" rel="noopener"><span class="ic c-red" data-ic="gift"></span><span class="tx"><b>ふるなび</b><small>家電や旅行の返礼品が多い</small></span><span class="chev">›</span></a><a class="row" href="https://furusato.ana.co.jp/" target="_blank" rel="noopener"><span class="ic c-red" data-ic="gift"></span><span class="tx"><b>ANAのふるさと納税</b><small>ANAの会員向け</small></span><span class="chev">›</span></a><a class="row" href="https://furusato.jal.co.jp/" target="_blank" rel="noopener"><span class="ic c-red" data-ic="gift"></span><span class="tx"><b>JALふるさと納税</b><small>JALの会員向け</small></span><span class="chev">›</span></a><a class="row" href="https://furusato.wowma.jp/" target="_blank" rel="noopener"><span class="ic c-red" data-ic="gift"></span><span class="tx"><b>au PAY ふるさと納税</b><small>au PAYで支払える</small></span><span class="chev">›</span></a><a class="row" href="https://shopping.yahoo.co.jp/promotion/event/furusato/" target="_blank" rel="noopener"><span class="ic c-red" data-ic="gift"></span><span class="tx"><b>Yahoo!ショッピング ふるさと納税</b><small>Yahoo!の会員IDで申し込める</small></span><span class="chev">›</span></a></div>
+<p class="small" style="margin-top:12px">2025年10月から、ふるさと納税サイト独自のポイントを付けて寄附を集めることは禁止されています。ワンストップ特例は5自治体まで・翌年1月10日必着です。</p>
+<p class="small">2026年分の所得税（基礎控除の引き上げ後）と2027年度の住民税の仕組みで計算した目安です。住宅ローン控除・医療費控除・iDeCoなどがある人や、副業収入がある人は上限が変わります。年収190万円以下は計算が合わないことがあります。正確な額は各サイトの詳しいシミュレーションで確認してください。</p></div><p class="foot">※2026年11月時点の公開情報をもとにした一般的な内容です。税額や制度の扱いは、所得・家族構成・会社の規定で異なります。最終判断は国税庁などの一次情報や勤務先の案内で確認してください。</p></div>
+<script src="app.js"></script><script>tabbar("tool");</script><script>
+var sp=0,auto=true;
+function kyuyo(a){if(a<=190e4)return Math.max(0,a-74e4);if(a<=360e4)return a-Math.max(65e4,a*.3+8e4);if(a<=660e4)return a-(a*.2+44e4);if(a<=850e4)return a-(a*.1+110e4);return a-195e4;}
+function rate(t){var b=[[195e4,.05],[330e4,.1],[695e4,.2],[900e4,.23],[1800e4,.33],[4000e4,.4],[1/0,.45]];for(var i=0;i<b.length;i++)if(t<=b[i][0])return b[i][1];}
+function lim(a,s,sp,k1,k2){var g=kyuyo(a),bs=g<=489e4?104e4:(g<=655e4?67e4:(g<=2350e4?62e4:0));
+var fi=sp*38e4+k1*38e4+k2*63e4,fr=sp*33e4+k1*33e4+k2*45e4;
+var t=Math.max(0,g-s-bs-fi),r=Math.max(0,g-s-43e4-fr),sh=Math.max(0,r*.1-2500),rr=rate(t);
+return {v:Math.floor((sh*.2/(.9-rr*1.021)+2000)/1000)*1000,r:rr,sh:sh};}
+function c(){var a=Math.max(0,+(document.getElementById('a').value||0))*1e4;if(auto)document.getElementById('s').value=Math.round(a*.15/1e4);
+var s=Math.max(0,+(document.getElementById('s').value||0))*1e4,k1=Math.max(0,Math.floor(+document.getElementById('k1').value||0)),k2=Math.max(0,Math.floor(+document.getElementById('k2').value||0));
+var x=lim(a,s,sp,k1,k2);
+document.getElementById('out').innerHTML='<div class="k">上限の目安（2026年分）</div><div class="v">'+yen(x.v)+'</div><div class="k">安心な寄附額（9割）：'+yen(Math.floor(x.v*.9/1000)*1000)+'</div><table><tr><td>住民税の所得割（目安）</td><td>'+yen(x.sh)+'</td></tr><tr><td>所得税の税率</td><td>'+Math.round(x.r*100)+'%</td></tr><tr><td>自己負担</td><td>2,000円</td></tr></table>';}
+function tb(){var h='<table style="width:100%">';[300,400,500,600,700,800,1000].forEach(function(m){var a=m*1e4;h+='<tr><td>年収'+m+'万円</td><td style="text-align:right;font-weight:800">'+yen(lim(a,a*.15,0,0,0).v)+'</td></tr>';});document.getElementById('tbl').innerHTML=h+'</table>';}
+document.getElementById('s').addEventListener('input',function(){auto=false;c();});
+['a','k1','k2'].forEach(function(i){document.getElementById(i).addEventListener('input',c)});
+document.querySelectorAll('#sp button').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('#sp button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');sp=+b.dataset.v;c();})});
+c();tb();</script><script data-goatcounter="https://tatchan-lab.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body></html>

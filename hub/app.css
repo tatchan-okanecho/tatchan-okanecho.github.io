@@ -99,7 +99,7 @@ details.term div{padding:0 14px 12px 30px;font-size:14px}
 .chk small{color:var(--muted);font-size:12px}
 /* bottom tab */
 .tabbar{position:fixed;bottom:0;left:0;right:0;z-index:9;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:6px 0 calc(6px + env(safe-area-inset-bottom))}
-.tabbar nav{max-width:560px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr)}
+.tabbar nav{max-width:560px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
 .tabbar a{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:10.5px;font-weight:800;color:#9aa5b1;padding:4px 0}
 .tabbar a svg{width:24px;height:24px}
 .tabbar a.on{color:var(--navy)}
