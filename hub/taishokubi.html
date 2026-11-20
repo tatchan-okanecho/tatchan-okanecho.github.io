@@ -1,0 +1,39 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>退職日で変わる社会保険料｜制度とお金ラボ</title><meta name="description" content="退職日を月末にするか、月末の前日までにするかで変わる社会保険料を計算。国民年金・国民健康保険・任意継続・家族の扶養との比較、退職月の賞与、将来の厚生年金への影響つき（2026年度の料率）。">
+<meta property="og:title" content="退職日で変わる社会保険料｜制度とお金ラボ"><meta property="og:description" content="退職日を月末にするか、月末の前日までにするかで変わる社会保険料を計算。国民年金・国民健康保険・任意継続・家族の扶養との比較、退職月の賞与、将来の厚生年金への影響つき（2026年度の料率）。"><meta property="og:image" content="https://tatchan-okanecho.github.io/hub/img/og.png">
+<meta name="theme-color" content="#fff7ea">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="app.css"><link rel="manifest" href="manifest.json"><link rel="apple-touch-icon" href="img/apple-touch-icon.png"></head><body><div class="app"><header class="top"><a class="back" href="tools.html" aria-label="戻る" onclick="if(document.referrer&&document.referrer.indexOf(location.host)>=0&&history.length>1){history.back();return false}">‹</a><h1>退職日で変わる社会保険料</h1></header><div class="pad">
+<div class="tip"><img src="img/t_think.png" alt=""><div class="b">社会保険料は<b>「月末にいるかどうか」</b>で決まります。1日早く辞めると会社の保険料は引かれませんが、その月の国民年金などを自分で払うことになります。</div></div>
+<div class="card"><div class="field"><label for="m">今の月給（額面）</label><div class="in"><input id="m" type="number" inputmode="decimal" value="35"><span class="u">万円</span></div><small>残業代・通勤手当も入れた毎月の総支給額</small></div>
+<div class="field"><label>年齢</label><div class="seg" id="ag"><button data-v="0">40歳未満</button><button data-v="1" class="on">40〜64歳</button></div></div>
+<div class="field"><label>辞めたあと、その月の保険は</label><div class="seg" id="nx" style="flex-wrap:wrap"><button data-v="0" class="on">国保＋国民年金</button><button data-v="1">任意継続＋国民年金</button><button data-v="2">家族の扶養</button></div><small>翌月1日に次の会社に入る人も、すき間の1か月は「国保＋国民年金」が必要です。家族の扶養は、配偶者が会社員で、自分が60歳未満の場合</small></div>
+<div class="field" id="kf"><label for="kk">国民健康保険料（1か月分）</label><div class="in"><input id="kk" type="number" inputmode="decimal" placeholder="わかれば"><span class="u">円</span></div><small>市区町村と前の年の所得で決まります。役所のサイトの試算で確認できます</small></div>
+<div class="field"><label for="b">退職する月に出る賞与</label><div class="in"><input id="b" type="number" inputmode="decimal" value="0"><span class="u">万円</span></div><small>なければ0</small></div>
+<div class="field"><label for="hr">健康保険料率（会社と本人の合計）</label><div class="in"><input id="hr" type="number" inputmode="decimal" value="9.9" step="0.01"><span class="u">%</span></div><small>協会けんぽの全国平均。健保組合の人は明細や案内で確認</small></div></div>
+<div class="res" id="out" aria-live="polite"></div>
+<div class="card" style="margin-top:12px"><b>押さえておきたい3つ</b><p class="small" style="margin:6px 0 0">・退職日の翌日に会社の保険の資格がなくなり、保険料は「その前の月の分まで」。月末に辞めると、辞めた月の分まで払います（日本年金機構）<br>・月末に辞めると、最後の給料から2か月分の保険料が引かれることがあります（会社の締め日しだい）<br>・月末の前日までに辞めた場合、その月に出た賞与には社会保険料がかかりません。かわりに、その月は自分で国民年金などに入る必要があります</p></div>
+<p class="small">2026年度の料率（厚生年金18.3%、介護保険1.62%、子ども・子育て支援金0.23%、国民年金17,920円、協会けんぽの任意継続の上限は標準報酬32万円）で計算した目安です。月給をそのまま標準報酬月額として計算しています。雇用保険料と税金は退職日で変わらないため入れていません。将来の年金の増え方は、報酬比例部分（平均標準報酬額×5.481/1000）で計算した目安です。入社した月に辞める場合（同じ月に資格を取って失う場合）は扱いが変わります。</p></div><p class="foot">※2026年11月時点の公開情報をもとにした一般的な内容です。税額や制度の扱いは、所得・家族構成・会社の規定で異なります。最終判断は国税庁などの一次情報や勤務先の案内で確認してください。</p></div>
+<script src="app.js"></script><script>tabbar("tool");</script><script>
+var ag=1,nx=0;
+function g(i){return Math.max(0,+(document.getElementById(i).value||0));}
+function c(){var m=g('m')*1e4,hr=g('hr')/100,b=g('b')*1e4,kkv=document.getElementById('kk').value,kk=kkv===''?null:g('kk');
+var std=Math.round(m/1000)*1000,kai=ag?.0162:0,sh=.0023;
+var ken=Math.round(std*hr/2),kv=Math.round(std*kai/2),sv=Math.round(std*sh/2),nen=Math.round(Math.min(std,65e4)*.0915),A=ken+kv+sv+nen;
+var bs=Math.floor(b/1000)*1000,AB=b?Math.round(bs*(hr+kai+sh)/2)+Math.round(Math.min(bs,15e5)*.0915):0;
+var KN=17920,B,bl,ninki=0;
+if(nx==0){B=kk===null?null:KN+kk;bl='国民年金 '+yen(KN)+'＋国民健康保険 '+(kk===null?'（入力してください）':yen(kk));}
+else if(nx==1){ninki=Math.round(Math.min(std,32e4)*(hr+kai+sh));B=KN+ninki;bl='国民年金 '+yen(KN)+'＋任意継続 '+yen(ninki);}
+else{B=0;bl='保険料はかからない（国民年金は第3号）';}
+var pen=Math.round(Math.min(std,65e4)*5.481/1000);
+var h='';
+if(B===null){var th=A+AB-KN;h='<div class="k">国保の1か月分が</div><div class="v">'+yen(Math.max(0,th))+'</div><div class="k">より安ければ「月末の前日まで」のほうが、その月の負担は小さくなります</div>';}
+else{var d=(A+AB)-B;h='<div class="k">'+(d>0?'月末の前日までに辞めると、その月の負担が':'月末に辞めたほうが、その月の負担が')+'</div><div class="v">'+yen(Math.abs(d))+'</div><div class="k">'+(d>0?'少なくなる目安':'少なくなる目安')+'</div>';}
+h+='<table><tr><td colspan="2" style="text-align:left"><b>月末に辞める（例 3月31日）</b></td></tr><tr><td>健康保険料</td><td>'+yen(ken)+'</td></tr>'+(ag?'<tr><td>介護保険料</td><td>'+yen(kv)+'</td></tr>':'')+'<tr><td>子ども・子育て支援金</td><td>'+yen(sv)+'</td></tr><tr><td>厚生年金保険料</td><td>'+yen(nen)+'</td></tr>'+(b?'<tr><td>賞与の社会保険料</td><td>'+yen(AB)+'</td></tr>':'')+'<tr><td>合計（本人の負担）</td><td>'+yen(A+AB)+'</td></tr>';
+h+='<tr><td colspan="2" style="text-align:left"><b>月末の前日までに辞める（例 3月30日）</b></td></tr><tr><td>会社の社会保険料'+(b?'・賞与の保険料':'')+'</td><td>0円</td></tr><tr><td>その月に自分で払う分</td><td>'+(B===null?'国保＋'+yen(KN):yen(B))+'</td></tr><tr><td colspan="2" style="font-size:12px;text-align:left">'+bl+'</td></tr>';
+h+='<tr><td>月末に辞めた場合、将来の厚生年金</td><td>年＋約'+yen(pen)+'</td></tr></table>';
+document.getElementById('out').innerHTML=h;}
+function seg(id,f){document.querySelectorAll('#'+id+' button').forEach(function(x){x.addEventListener('click',function(){document.querySelectorAll('#'+id+' button').forEach(function(y){y.classList.remove('on')});x.classList.add('on');f(+x.dataset.v);c();})});}
+seg('ag',function(v){ag=v});seg('nx',function(v){nx=v;document.getElementById('kf').style.display=v==0?'':'none'});
+['m','kk','b','hr'].forEach(function(i){document.getElementById(i).addEventListener('input',c)});c();</script><script data-goatcounter="https://tatchan-lab.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body></html>
