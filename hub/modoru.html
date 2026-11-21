@@ -1,0 +1,41 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>年末調整でいくら戻る？｜制度とお金ラボ</title><meta name="description" content="2026年の年末調整で戻る所得税の目安を計算。毎月の給料から引かれた所得税（令和8年分の源泉徴収税額表）と、基礎控除104万円・給与所得控除74万円の新しい税額の差。賞与・扶養・生命保険料控除・iDeCoに対応。">
+<meta property="og:title" content="年末調整でいくら戻る？｜制度とお金ラボ"><meta property="og:description" content="2026年の年末調整で戻る所得税の目安を計算。毎月の給料から引かれた所得税（令和8年分の源泉徴収税額表）と、基礎控除104万円・給与所得控除74万円の新しい税額の差。賞与・扶養・生命保険料控除・iDeCoに対応。"><meta property="og:image" content="https://tatchan-okanecho.github.io/hub/img/og.png">
+<meta name="theme-color" content="#fff7ea">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="app.css"><link rel="manifest" href="manifest.json"><link rel="apple-touch-icon" href="img/apple-touch-icon.png"></head><body><div class="app"><header class="top"><a class="back" href="tools.html" aria-label="戻る" onclick="if(document.referrer&&document.referrer.indexOf(location.host)>=0&&history.length>1){history.back();return false}">‹</a><h1>年末調整でいくら戻る？</h1></header><div class="pad">
+<div class="tip"><img src="img/t_point.png" alt=""><div class="b">毎月の所得税は<b>基礎控除58万円</b>のまま計算されています。今年の<b>104万円</b>は12月の年末調整でまとめて反映。だから今年は<b>戻る人が多い</b>年です。</div></div>
+<div class="card"><div class="field"><label for="m">毎月の給料（額面）</label><div class="in"><input id="m" type="number" inputmode="decimal" value="40"><span class="u">万円</span></div><small>残業代・通勤手当も入れた総支給額。毎月ほぼ同じとして計算</small></div>
+<div class="field"><label for="b">今年のボーナスの合計</label><div class="in"><input id="b" type="number" inputmode="decimal" value="0"><span class="u">万円</span></div><small>夏と冬の合計（2回に分けて計算）</small></div>
+<div class="field"><label>年齢</label><div class="seg" id="ag"><button data-v="0">40歳未満</button><button data-v="1" class="on">40〜64歳</button></div></div>
+<div class="field"><label>扶養している家族（配偶者・16歳以上）</label><div class="seg" id="fy"><button data-v="0" class="on">0人</button><button data-v="1">1人</button><button data-v="2">2人</button></div><small>配偶者は年収136万円以下の場合</small></div>
+<div class="field"><label for="ho">生命保険・地震保険などの控除（合計）</label><div class="in"><input id="ho" type="number" inputmode="decimal" value="0"><span class="u">万円</span></div><small>控除額の合計（払った保険料ではありません）。生命保険は最大12万円</small></div>
+<div class="field"><label for="id">iDeCoの掛金（今年の合計）</label><div class="in"><input id="id" type="number" inputmode="decimal" value="0"><span class="u">万円</span></div></div>
+<div class="field"><label for="hr">健康保険料率（会社と本人の合計）</label><div class="in"><input id="hr" type="number" inputmode="decimal" value="9.9" step="0.01"><span class="u">%</span></div><small>協会けんぽの全国平均。健保組合の人は明細や案内で確認</small></div></div>
+<div class="res" id="out" aria-live="polite"></div>
+<a class="feature" href="nencho.html" style="border-color:var(--red)"><span class="lab" style="background:var(--red)">出す前に</span><h2>2026年の年末調整チェック</h2><p>保険料控除の証明書・扶養の年収など9項目</p></a>
+<p class="small">毎月の所得税は国税庁「令和8年分 源泉徴収税額表」の電算機計算の特例、ボーナスは「賞与に対する源泉徴収税額の算出率の表（令和8年分）」で計算。1年分の税額は2026年分の給与所得控除（最低74万円）・基礎控除（所得489万円以下104万円・655万円以下67万円・それ以上62万円）で計算した目安です（復興特別所得税込み）。1月から12月まで同じ会社で働き、毎月の給料が同じ場合です。住民税は年末調整では戻りません。扶養控除は1人38万円（本人の所得900万円以下の場合）で計算しています。</p></div><p class="foot">※2026年11月時点の公開情報をもとにした一般的な内容です。税額や制度の扱いは、所得・家族構成・会社の規定で異なります。最終判断は国税庁などの一次情報や勤務先の案内で確認してください。</p></div>
+<script src="app.js"></script><script>tabbar("tool");</script><script>
+var R={0:[[82,0],[94,2.042],[260,4.084],[309,6.126],[342,8.168],[372,10.21],[402,12.252],[433,14.294],[520,16.336],[605,18.378],[684,20.42],[715,22.462],[752,24.504],[795,26.546],[854,28.588],[922,30.63],[1318,32.672],[1521,35.735],[2621,38.798],[3495,41.861],[1/0,45.945]],
+1:[[107,0],[250,2.042],[289,4.084],[346,6.126],[373,8.168],[401,10.21],[430,12.252],[463,14.294],[520,16.336],[621,18.378],[705,20.42],[739,22.462],[778,24.504],[821,26.546],[882,28.588],[952,30.63],[1342,32.672],[1526,35.735],[2645,38.798],[3527,41.861],[1/0,45.945]],
+2:[[143,0],[276,2.042],[321,4.084],[377,6.126],[400,8.168],[426,10.21],[457,12.252],[492,14.294],[525,16.336],[636,18.378],[728,20.42],[764,22.462],[804,24.504],[848,26.546],[910,28.588],[983,30.63],[1367,32.672],[1526,35.735],[2669,38.798],[3559,41.861],[1/0,45.945]]};
+var ag=1,fy=0;
+function v(i){return Math.max(0,+(document.getElementById(i).value||0));}
+function kkm(a){return a<=158333?54167:a<=299999?Math.ceil(a*.3+6667):a<=549999?Math.ceil(a*.2+36667):a<=708330?Math.ceil(a*.1+91667):162500;}
+function kim(a){return a<=2120833?48334:a<=2162499?40000:a<=2204166?26667:a<=2245833?13334:0;}
+function txm(b){var t=[[162500,.05105,0],[275000,.1021,8296],[579166,.2042,36374],[750000,.23483,54113],[1500000,.33693,130688],[3333333,.4084,237893],[1/0,.45945,408061]];for(var i=0;i<t.length;i++)if(b<=t[i][0])return Math.max(0,Math.round((b*t[i][1]-t[i][2])/10)*10);}
+function kk(s){return s<=2200000?740000:s<=3600000?Math.floor(s*.3)+80000:s<=6600000?Math.floor(s*.2)+440000:s<=8500000?Math.floor(s*.1)+1100000:1950000;}
+function kiso(g){return g<=4890000?1040000:g<=6550000?670000:g<=23500000?620000:g<=24000000?480000:g<=24500000?320000:g<=25000000?160000:0;}
+function itax(k){var t=[[1950000,.05,0],[3300000,.1,97500],[6950000,.2,427500],[9000000,.23,636000],[18000000,.33,1536000],[40000000,.4,2796000],[1/0,.45,4796000]];for(var i=0;i<t.length;i++)if(k<=t[i][0])return Math.max(0,k*t[i][1]-t[i][2]);}
+function rt(k){var t=R[Math.min(fy,2)];for(var i=0;i<t.length;i++)if(k<t[i][0])return t[i][1]/100;return .45945;}
+function c(){var m=v('m')*1e4,B=v('b')*1e4,hr=v('hr')/100,ho=v('ho')*1e4,ide=v('id')*1e4;
+var kai=ag?.0162:0,sm=Math.round(m*(hr+kai+.0023)/2)+Math.round(Math.min(m,650000)*.0915)+Math.round(m*.005);
+var a=m-sm-ide/12,bb=Math.max(0,a-kkm(a)-kim(a)-31667*fy),wm=txm(bb)*12;
+var wb=0,sb=0;if(B>0){var h=B/2,std=Math.floor(h/1000)*1000,s1=Math.round(std*(hr+kai+.0023)/2)+Math.round(Math.min(std,15e5)*.0915)+Math.round(h*.005);sb=s1*2;var mr=sm/m;wb=Math.floor((h-s1)*rt(m*(1-mr)/1000))*2;}
+var inc=m*12+B,soc=sm*12+sb,g=Math.max(0,inc-kk(inc)),k=Math.floor(Math.max(0,g-soc-ide-ho-kiso(g)-fy*38e4)/1000)*1000,tax=Math.floor(itax(k)*1.021/100)*100;
+var w=wm+wb,d=w-tax;
+document.getElementById('out').innerHTML='<div class="k">'+(d>=0?'年末調整で戻る目安':'年末調整で追加で引かれる目安')+'</div><div class="v">'+yen(Math.abs(d))+'</div><div class="k">12月（または1月）の給料で精算</div><table><tr><td>今年引かれた所得税（毎月）</td><td>'+yen(wm)+'</td></tr><tr><td>今年引かれた所得税（ボーナス）</td><td>'+yen(wb)+'</td></tr><tr><td>本当の1年分の所得税</td><td>'+yen(tax)+'</td></tr><tr><td>年収（額面）</td><td>'+yen(inc)+'</td></tr></table>';}
+function seg(id,f){document.querySelectorAll('#'+id+' button').forEach(function(x){x.addEventListener('click',function(){document.querySelectorAll('#'+id+' button').forEach(function(y){y.classList.remove('on')});x.classList.add('on');f(+x.dataset.v);c();})});}
+seg('ag',function(x){ag=x});seg('fy',function(x){fy=x});
+['m','b','ho','id','hr'].forEach(function(i){document.getElementById(i).addEventListener('input',c)});c();</script><script data-goatcounter="https://tatchan-lab.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body></html>
