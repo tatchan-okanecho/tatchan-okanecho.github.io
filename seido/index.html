@@ -72,8 +72,10 @@ function finish(){const sum=[0,0,0,0],cnt=[0,0,0,0];D.Q.forEach((q,k)=>{let s=(2
  document.getElementById("axes").innerHTML=L.map((l,k)=>{const p=pct[k];return `<div class="ax"><div class="t"><span>${l[2]} ${p}%</span><span>${l[3]} ${100-p}%</span></div><div class="bar" style="margin:4px 0"><i style="width:${p}%"></i></div></div>`}).join("");
  const r=[code[0],code[1],code[3]].map(c=>D.REC[c]);r.push(D.REC[code[2]]);document.getElementById("rrec").innerHTML=r.slice(0,3).map(x=>"<li>"+x+"</li>").join("");
  const arts=[];[code[0],code[2],code[1],code[3]].forEach(c=>{const a=D.ART[c];if(a&&!arts.find(x=>x[0]===a[0]))arts.push(a)});document.getElementById("rart").innerHTML=arts.slice(0,2).map(a=>`<a href="${NOTE+a[0]}" target="_blank" rel="noopener">${a[1]}</a>`).join("<br>");
- grid("g1",code);makeCard(code,t,pct);show("result")}
+ grid("g1",code);makeCard(code,t,pct);gev("shindan-done");show("result")}
 grid("g0","");
+function gev(n){var t=0;(function w(){if(window.goatcounter&&window.goatcounter.count){try{window.goatcounter.count({path:n,title:n,event:true})}catch(e){}}else if(t++<40)setTimeout(w,250)})()}
+try{var d0=new Date(),dy=d0.getFullYear()+'-'+(d0.getMonth()+1)+'-'+d0.getDate(),ku='lab-uv',vu=JSON.parse(localStorage.getItem(ku)||'null');if(!vu){vu={f:dy,n:1,l:dy};gev('uv-new')}else if(vu.l!==dy){vu.n++;vu.l=dy;gev('uv-return');if(vu.n===2)gev('uv-return-first')}localStorage.setItem(ku,JSON.stringify(vu))}catch(e){}
 let CARD=null;
 function wrapT(x,t,w){const o=[];let c="";for(const ch of t){if(x.measureText(c+ch).width>w){o.push(c);c=ch}else c+=ch}if(c)o.push(c);return o}
 function makeCard(code,t,pct){const W=1080,H=1920,cv=document.createElement("canvas");cv.width=W;cv.height=H;const x=cv.getContext("2d");const FF='"Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif';
@@ -89,7 +91,7 @@ function makeCard(code,t,pct){const W=1080,H=1920,cv=document.createElement("can
  x.textAlign="center";x.fillStyle="#e05252";x.beginPath();x.roundRect(160,1700,W-320,110,55);x.fill();x.fillStyle="#fff";x.font="900 44px "+FF;x.fillText("あなたは何タイプ？ 20問・3分",W/2,1770);
  x.fillStyle="#c8d3e4";x.font="700 32px "+FF;x.fillText("@tatchan_okanecho のプロフィールから",W/2,1870);
  cv.toBlob(b=>{CARD=b;document.getElementById("cimg").src=URL.createObjectURL(b)},"image/png")}
-async function shareCard(){if(!CARD)return;const f=new File([CARD],"shindan.png",{type:"image/png"});
+async function shareCard(){if(!CARD)return;gev("shindan-share");const f=new File([CARD],"shindan.png",{type:"image/png"});
  if(navigator.canShare&&navigator.canShare({files:[f]})){try{await navigator.share({files:[f],text:"会社の制度 使いこなし診断 https://tatchan-okanecho.github.io/seido/?ref=share"});return}catch(e){}}
  const a=document.createElement("a");a.href=URL.createObjectURL(CARD);a.download="shindan.png";a.click()}
 </script></body></html>
