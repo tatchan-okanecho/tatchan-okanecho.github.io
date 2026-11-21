@@ -1,0 +1,34 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>年収の手取り｜制度とお金ラボ</title><meta name="description" content="年収（額面）から手取りを計算。2026年の基礎控除104万円・給与所得控除74万円・子ども・子育て支援金に対応。社会保険料・所得税・住民税の内訳、月あたりの額、40歳以上の介護保険料、配偶者控除・扶養控除つき。">
+<meta property="og:title" content="年収の手取り｜制度とお金ラボ"><meta property="og:description" content="年収（額面）から手取りを計算。2026年の基礎控除104万円・給与所得控除74万円・子ども・子育て支援金に対応。社会保険料・所得税・住民税の内訳、月あたりの額、40歳以上の介護保険料、配偶者控除・扶養控除つき。"><meta property="og:image" content="https://tatchan-okanecho.github.io/hub/img/og.png">
+<meta name="theme-color" content="#fff7ea">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="app.css"><link rel="manifest" href="manifest.json"><link rel="apple-touch-icon" href="img/apple-touch-icon.png"></head><body><div class="app"><header class="top"><a class="back" href="tools.html" aria-label="戻る" onclick="if(document.referrer&&document.referrer.indexOf(location.host)>=0&&history.length>1){history.back();return false}">‹</a><h1>年収の手取り</h1></header><div class="pad">
+<div class="tip"><img src="img/t_point.png" alt=""><div class="b">年収600万円でも、手元に残るのは<b>約77%</b>。いちばん重いのは税金ではなく<b>社会保険料</b>です。</div></div>
+<div class="card"><div class="field"><label for="n">年収（額面）</label><div class="in"><input id="n" type="number" inputmode="decimal" value="600"><span class="u">万円</span></div><small>源泉徴収票の「支払金額」。賞与込みでも目安になります</small></div>
+<div class="field"><label>年齢</label><div class="seg" id="ag"><button data-v="0">40歳未満</button><button data-v="1" class="on">40〜64歳</button></div><small>40歳から介護保険料が加わります</small></div>
+<div class="field"><label>配偶者控除</label><div class="seg" id="sp"><button data-v="0" class="on">なし</button><button data-v="1">あり</button></div><small>配偶者の年収が136万円以下の場合（2026年分）</small></div>
+<div class="field"><label>扶養している子ども・親（16歳以上）</label><div class="seg" id="fy"><button data-v="0" class="on">0人</button><button data-v="1">1人</button><button data-v="2">2人</button></div><small style="margin-top:8px;display:block">うち19〜22歳（特定扶養・控除が大きい）</small><div class="seg" id="tk" style="margin-top:4px"><button data-v="0" class="on">0人</button><button data-v="1">1人</button><button data-v="2">2人</button></div></div>
+<div class="field"><label for="hr">健康保険料率（会社と本人の合計）</label><div class="in"><input id="hr" type="number" inputmode="decimal" value="9.9" step="0.01"><span class="u">%</span></div><small>協会けんぽの全国平均。健保組合の人は明細や案内で確認</small></div></div>
+<div class="res" id="out" aria-live="polite"></div>
+<a class="feature" href="https://note.com/genial_myrtle564/n/n26b5f081199b?ref=lab" style="border-color:var(--orange)"><span class="lab" style="background:var(--orange)">早見表</span><h2>年収200万〜1,500万円の手取り 完全版</h2><p>27段階・40歳未満と40〜64歳・配偶者控除・ボーナスの表（note）</p></a>
+<p class="small">2026年の料率（厚生年金18.3%・上限65万円、介護保険1.62%、子ども・子育て支援金0.23%、雇用保険の本人負担0.5%）と、2026年分の所得税（給与所得控除の最低74万円、基礎控除 所得489万円以下104万円・655万円以下67万円・それ以上62万円、復興特別所得税込み）で計算した目安です。住民税は基礎控除43万円・税率10%・均等割など5,000円で、今年の所得で計算しています（実際は前の年の所得で決まります）。年収を12か月に均等に分けて社会保険料を計算しています。</p></div><p class="foot">※2026年11月時点の公開情報をもとにした一般的な内容です。税額や制度の扱いは、所得・家族構成・会社の規定で異なります。最終判断は国税庁などの一次情報や勤務先の案内で確認してください。</p></div>
+<script src="app.js"></script><script>tabbar("tool");</script><script>
+var ag=1,sp=0,fy=0,tk=0;
+function v(i){return Math.max(0,+(document.getElementById(i).value||0));}
+function kk(s){return s<=2200000?740000:s<=3600000?Math.floor(s*.3)+80000:s<=6600000?Math.floor(s*.2)+440000:s<=8500000?Math.floor(s*.1)+1100000:1950000;}
+function kiso(g){return g<=4890000?1040000:g<=6550000?670000:g<=23500000?620000:g<=24000000?480000:g<=24500000?320000:g<=25000000?160000:0;}
+function itax(k){var t=[[1950000,.05,0],[3300000,.1,97500],[6950000,.2,427500],[9000000,.23,636000],[18000000,.33,1536000],[40000000,.4,2796000],[1/0,.45,4796000]];for(var i=0;i<t.length;i++)if(k<=t[i][0])return Math.max(0,k*t[i][1]-t[i][2]);}
+function c(){var n=v('n')*1e4,hr=v('hr')/100,m=n/12;if(tk>fy){tk=fy;}
+var ken=Math.round(m*hr/2)*12,kai=ag?Math.round(m*.0081)*12:0,shi=Math.round(m*.00115)*12,nen=Math.round(Math.min(m,650000)*.0915)*12,ko=Math.round(n*.005),soc=ken+kai+shi+nen+ko;
+var g=Math.max(0,n-kk(n)),si=0,sr=0;if(sp){if(g<=9e6){si=38e4;sr=33e4}else if(g<=9.5e6){si=26e4;sr=22e4}else if(g<=1e7){si=13e4;sr=11e4}}
+var ip=(fy-tk)*38e4+tk*63e4,rp=(fy-tk)*33e4+tk*45e4;
+var k=Math.floor(Math.max(0,g-soc-kiso(g)-si-ip)/1000)*1000,it=Math.floor(itax(k)*1.021/100)*100;
+var rk=Math.floor(Math.max(0,g-soc-43e4-sr-rp)/1000)*1000,rt=Math.max(0,Math.floor(((rk>0?rk*.1-2500:0)+5000)/100)*100);if(g<=450000)rt=0;
+var net=n-soc-it-rt;
+document.getElementById('out').innerHTML='<div class="k">手取りの目安（年）</div><div class="v">'+yen(net)+'</div><div class="k">額面の'+(n?Math.round(net/n*1000)/10:0)+'%・月あたり約'+yen(net/12)+'</div><table><tr><td>健康保険料</td><td>'+yen(ken)+'</td></tr>'+(ag?'<tr><td>介護保険料</td><td>'+yen(kai)+'</td></tr>':'')+'<tr><td>子ども・子育て支援金</td><td>'+yen(shi)+'</td></tr><tr><td>厚生年金保険料</td><td>'+yen(nen)+'</td></tr><tr><td>雇用保険料</td><td>'+yen(ko)+'</td></tr><tr><td>所得税</td><td>'+yen(it)+'</td></tr><tr><td>住民税</td><td>'+yen(rt)+'</td></tr><tr><td>引かれる合計</td><td>'+yen(soc+it+rt)+'</td></tr></table>';}
+function seg(id,f){document.querySelectorAll('#'+id+' button').forEach(function(x){x.addEventListener('click',function(){document.querySelectorAll('#'+id+' button').forEach(function(y){y.classList.remove('on')});x.classList.add('on');f(+x.dataset.v);c();})});}
+seg('ag',function(x){ag=x});seg('sp',function(x){sp=x});seg('fy',function(x){fy=x});seg('tk',function(x){tk=x});
+try{var q=new URLSearchParams(location.search).get('n');if(q)document.getElementById('n').value=q;}catch(e){}
+['n','hr'].forEach(function(i){document.getElementById(i).addEventListener('input',c)});c();</script><script data-goatcounter="https://tatchan-lab.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body></html>
