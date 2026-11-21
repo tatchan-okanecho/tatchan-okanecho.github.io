@@ -36,3 +36,11 @@ x.fillStyle='#F08C1E';x.fillRect(0,1230,1080,120);x.fillStyle='#fff';x.font='900
 c.toBlob(function(b){var f=new File([b],'lab-result.png',{type:'image/png'});if(navigator.canShare&&navigator.canShare({files:[f]})){navigator.share({files:[f],title:ttl}).catch(function(){})}else{var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='lab-result.png';a.click();}try{if(window.goatcounter)goatcounter.count({path:'share-'+location.pathname,event:true})}catch(e){}},'image/png');}
 (function(){var o=document.getElementById('out');if(!o)return;var btn=document.createElement('button');btn.type='button';btn.className='cta navy';btn.style.cssText='width:100%;border:0;font-size:15px;margin:0 0 14px';btn.textContent='結果を画像で保存・シェア';btn.addEventListener('click',shareImg);o.parentNode.insertBefore(btn,o.nextSibling);})();
 try{if('serviceWorker' in navigator&&location.protocol==='https:')navigator.serviceWorker.register('sw.js');}catch(e){}
+/* 計測（11/21）: 自分の端末は #toggle-goatcounter で除外。新しい端末・再訪・計算した を記録 */
+(function(){function ev(n){var t=0;(function w(){if(window.goatcounter&&window.goatcounter.count){try{window.goatcounter.count({path:n,title:n,event:true})}catch(e){}}else if(t++<40)setTimeout(w,250)})()}
+try{var d=new Date(),day=d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate(),k='lab-uv',v=JSON.parse(localStorage.getItem(k)||'null');
+if(!v){v={f:day,n:1,l:day};ev('uv-new')}else if(v.l!==day){v.n++;v.l=day;ev('uv-return');if(v.n===2)ev('uv-return-first')}
+localStorage.setItem(k,JSON.stringify(v));}catch(e){}
+var done=false;document.addEventListener('input',function(e){if(done||!e.target.closest('.field,.card'))return;done=true;ev('calc-'+(location.pathname.split('/').pop()||'index').replace('.html',''))},true);
+var r=(new URLSearchParams(location.search)).get('ref');if(r)try{if(!sessionStorage.getItem('lab-ref')){sessionStorage.setItem('lab-ref',r)}}catch(e){}
+window.labEv=ev;})();
