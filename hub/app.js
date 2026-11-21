@@ -24,11 +24,11 @@ function tabbar(active){
 function yen(n){return Math.round(n).toLocaleString('ja-JP')+'円';}
 function store(k,v){try{if(v===undefined)return JSON.parse(localStorage.getItem(k)||'null');localStorage.setItem(k,JSON.stringify(v));}catch(e){return null;}}
 // share result as image (1080x1350). Runs only on pages that have #out
-function shareImg(){var o=document.getElementById('out');if(!o)return;var ttl=(document.querySelector('.top h1')||{}).textContent||'制度とお金ラボ';
+function shareImg(){var o=document.getElementById('out');if(!o)return;var ttl=(document.querySelector('.top h1')||{}).textContent||'お給料の保健室';
 var ks=[].slice.call(o.querySelectorAll('.k')).map(function(e){return e.textContent}),vs=[].slice.call(o.querySelectorAll('.v')).map(function(e){return e.textContent}),rows=[].slice.call(o.querySelectorAll('tr')).map(function(r){return [].slice.call(r.children).map(function(c){return c.textContent})});
 var c=document.createElement('canvas');c.width=1080;c.height=1350;var x=c.getContext('2d'),F='"M PLUS Rounded 1c",sans-serif';
 x.fillStyle='#fff7ea';x.fillRect(0,0,1080,1350);x.fillStyle='#1C345C';x.fillRect(0,0,1080,190);
-x.fillStyle='#F7C544';x.font='900 40px '+F;x.fillText('制度とお金ラボ',60,85);x.fillStyle='#fff';x.font='900 58px '+F;x.fillText(ttl,60,160);
+x.fillStyle='#F7C544';x.font='900 40px '+F;x.fillText('お給料の保健室',60,85);x.fillStyle='#fff';x.font='900 58px '+F;x.fillText(ttl,60,160);
 x.fillStyle='#1C345C';x.beginPath();x.roundRect?x.roundRect(60,240,960,250,32):x.rect(60,240,960,250);x.fill();
 x.fillStyle='#cdd8ea';x.font='700 36px '+F;x.fillText(ks[0]||'',100,310);x.fillStyle='#F7C544';x.font='900 96px '+F;x.fillText(vs[0]||'',100,425);
 var y=570;x.font='700 36px '+F;rows.slice(0,7).forEach(function(r){x.fillStyle='#5F6A79';x.fillText(r[0]||'',80,y);x.fillStyle='#1C345C';x.textAlign='right';x.fillText(r[1]||'',1000,y);x.textAlign='left';x.strokeStyle='#EDE4D3';x.beginPath();x.moveTo(80,y+24);x.lineTo(1000,y+24);x.stroke();y+=78;});
