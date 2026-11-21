@@ -44,12 +44,13 @@ footer{text-align:center;font-size:11px;color:var(--sub);margin-top:24px}
  <button class="btn sub" onclick="back()">← もどる</button></section>
 <section id="result" class="hide">
  <div class="rhead"><div class="code" id="rcode"></div><div class="rname" id="rname"></div><div class="rc" id="rc"></div></div>
+ <div class="card" style="text-align:center"><h3>結果の画像</h3><img id="cimg" alt="診断結果の画像" style="width:62%;max-width:260px;border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,.15)"><button class="btn" onclick="shareCard()">画像をシェア・保存する</button><p style="font-size:12px;color:#6a7787;margin:6px 0 0">ストーリーに貼って、友達にも診断してもらおう</p></div>
  <div class="card"><p id="ro" style="margin:0;line-height:1.8"></p></div>
  <div class="card"><h3>あなたの傾向</h3><div id="axes"></div></div>
  <div class="card"><h3>強み</h3><p id="rg" style="margin:0"></p><h3 style="margin-top:14px">落とし穴</h3><p id="rb" style="margin:0"></p></div>
  <div class="card"><h3>今すぐ見るべき会社の制度3つ</h3><ul class="rec" id="rrec"></ul></div>
  <div class="card"><h3>タイプに合う解説記事</h3><div id="rart" style="line-height:2"></div></div>
- <div class="card" style="text-align:center"><b>結果をスクショして、ストーリーでシェアしてね</b><a class="btn" style="text-decoration:none" href="https://www.instagram.com/tatchan_okanecho/" target="_blank" rel="noopener">インスタで毎日の解説を見る</a><button class="btn sub" onclick="start()">もう一度診断する</button></div>
+ <div class="card" style="text-align:center"><b>毎日の解説はインスタで</b><a class="btn" style="text-decoration:none" href="https://www.instagram.com/tatchan_okanecho/" target="_blank" rel="noopener">インスタで毎日の解説を見る</a><button class="btn sub" onclick="start()">もう一度診断する</button></div>
  <div class="card"><h3>16タイプ</h3><div class="grid" id="g1"></div></div>
 </section>
 <footer>※診断は会社の制度とのつき合い方の傾向を見るものです。制度の有無や内容は会社によって異なります。<br>© たっちゃん｜給与明細と会社の制度</footer>
@@ -71,8 +72,26 @@ function finish(){const sum=[0,0,0,0],cnt=[0,0,0,0];D.Q.forEach((q,k)=>{let s=(2
  document.getElementById("axes").innerHTML=L.map((l,k)=>{const p=pct[k];return `<div class="ax"><div class="t"><span>${l[2]} ${p}%</span><span>${l[3]} ${100-p}%</span></div><div class="bar" style="margin:4px 0"><i style="width:${p}%"></i></div></div>`}).join("");
  const r=[code[0],code[1],code[3]].map(c=>D.REC[c]);r.push(D.REC[code[2]]);document.getElementById("rrec").innerHTML=r.slice(0,3).map(x=>"<li>"+x+"</li>").join("");
  const arts=[];[code[0],code[2],code[1],code[3]].forEach(c=>{const a=D.ART[c];if(a&&!arts.find(x=>x[0]===a[0]))arts.push(a)});document.getElementById("rart").innerHTML=arts.slice(0,2).map(a=>`<a href="${NOTE+a[0]}" target="_blank" rel="noopener">${a[1]}</a>`).join("<br>");
- grid("g1",code);show("result")}
+ grid("g1",code);makeCard(code,t,pct);show("result")}
 grid("g0","");
+let CARD=null;
+function wrapT(x,t,w){const o=[];let c="";for(const ch of t){if(x.measureText(c+ch).width>w){o.push(c);c=ch}else c+=ch}if(c)o.push(c);return o}
+function makeCard(code,t,pct){const W=1080,H=1920,cv=document.createElement("canvas");cv.width=W;cv.height=H;const x=cv.getContext("2d");const FF='"Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif';
+ const g=x.createLinearGradient(0,0,W,H);g.addColorStop(0,"#16294a");g.addColorStop(1,"#2a4a7c");x.fillStyle=g;x.fillRect(0,0,W,H);
+ x.fillStyle="rgba(247,197,68,.14)";x.beginPath();x.arc(W-60,180,300,0,7);x.fill();
+ x.textAlign="center";x.fillStyle="#f7c544";x.font="900 54px "+FF;x.fillText("会社の制度 使いこなし診断",W/2,230);
+ x.fillStyle="#fff";x.font="800 40px "+FF;x.fillText("わたしのタイプは",W/2,360);
+ x.fillStyle="#f7c544";x.font="900 220px "+FF;x.fillText(code,W/2,600);
+ x.fillStyle="#fff";x.font="900 84px "+FF;x.fillText(t[0],W/2,740);
+ x.font="700 40px "+FF;x.fillStyle="#dfe7f3";wrapT(x,t[1],900).slice(0,2).forEach((l,k)=>x.fillText(l,W/2,830+k*58));
+ x.textAlign="left";L.forEach((l,k)=>{const y=1010+k*170,p=pct[k];x.fillStyle="#fff";x.font="800 38px "+FF;x.fillText(l[2]+" "+p+"%",110,y);x.textAlign="right";x.fillText(l[3]+" "+(100-p)+"%",W-110,y);x.textAlign="left";
+  x.fillStyle="rgba(255,255,255,.18)";x.beginPath();x.roundRect(110,y+28,W-220,34,17);x.fill();x.fillStyle="#f08c1e";x.beginPath();x.roundRect(110,y+28,Math.max(34,(W-220)*p/100),34,17);x.fill()});
+ x.textAlign="center";x.fillStyle="#e05252";x.beginPath();x.roundRect(160,1700,W-320,110,55);x.fill();x.fillStyle="#fff";x.font="900 44px "+FF;x.fillText("あなたは何タイプ？ 20問・3分",W/2,1770);
+ x.fillStyle="#c8d3e4";x.font="700 32px "+FF;x.fillText("@tatchan_okanecho のプロフィールから",W/2,1870);
+ cv.toBlob(b=>{CARD=b;document.getElementById("cimg").src=URL.createObjectURL(b)},"image/png")}
+async function shareCard(){if(!CARD)return;const f=new File([CARD],"shindan.png",{type:"image/png"});
+ if(navigator.canShare&&navigator.canShare({files:[f]})){try{await navigator.share({files:[f],text:"会社の制度 使いこなし診断 https://tatchan-okanecho.github.io/seido/?ref=share"});return}catch(e){}}
+ const a=document.createElement("a");a.href=URL.createObjectURL(CARD);a.download="shindan.png";a.click()}
 </script></body></html>
 <script>
 (function(){var LAB="https://tatchan-okanecho.github.io/hub/";
