@@ -9,7 +9,7 @@
 <div class="card"><div class="field"><label for="a">退職金の額</label><div class="in"><input id="a" type="number" inputmode="decimal" value="2000"><span class="u">万円</span></div></div>
 <div class="field"><label for="y">勤続年数</label><div class="in"><input id="y" type="number" inputmode="numeric" value="30"><span class="u">年</span></div><small>1年未満の端数は切り上げます</small></div></div>
 <div class="res" id="out" aria-live="polite"></div>
-<p class="small">会社に「退職所得の受給に関する申告書」を出した場合の一般的な計算です。勤続5年以下・役員・障害退職・同じ年に複数の退職金がある場合などは異なります。住民税は10%で計算。</p></div><p class="foot">※2026年11月時点の公開情報をもとにした一般的な内容です。税額や制度の扱いは、所得・家族構成・会社の規定で異なります。最終判断は国税庁などの一次情報や勤務先の案内で確認してください。</p></div>
+<p class="small">会社に「退職所得の受給に関する申告書」を出した場合の一般的な計算です。勤続5年以下・役員・障害退職・同じ年に複数の退職金がある場合などは異なります。住民税は10%で計算。</p></div><p class="foot">※2026年11月時点の公開情報をもとにした一般的な内容です。税額や制度の扱いは、所得・家族構成・会社の規定で異なります。最終判断は国税庁などの一次情報や勤務先の案内で確認してください。<br><a href="about.html" style="text-decoration:underline">運営者情報</a>・<a href="nenshu.html" style="text-decoration:underline">年収別の手取り一覧</a></p></div>
 <script src="app.js"></script><script>tabbar("tool");</script><script>
 function itax(x){var t=[[1950000,.05,0],[3300000,.1,97500],[6950000,.2,427500],[9000000,.23,636000],[18000000,.33,1536000],[40000000,.4,2796000],[1/0,.45,4796000]];for(var i=0;i<t.length;i++)if(x<=t[i][0])return Math.max(0,x*t[i][1]-t[i][2]);}
 function c(){var a=Math.max(0,+document.getElementById('a').value||0)*1e4,y=Math.max(1,Math.ceil(+document.getElementById('y').value||1));

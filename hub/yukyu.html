@@ -9,7 +9,7 @@
 <div class="card"><div class="field"><label>週に働く日数</label><div class="seg" id="seg"><button data-d="5" class="on">5日以上</button><button data-d="4">4日</button><button data-d="3">3日</button><button data-d="2">2日</button><button data-d="1">1日</button></div><small>週30時間以上なら「5日以上」と同じ扱い</small></div>
 <div class="field"><label for="yy">勤続</label><div class="in"><input id="yy" type="number" inputmode="numeric" value="3"><span class="u">年</span><input id="mm" type="number" inputmode="numeric" value="6"><span class="u">か月</span></div></div></div>
 <div class="res" id="out" aria-live="polite"></div>
-<p class="small">労働基準法の最低日数です（出勤率8割以上が条件）。会社が上乗せしている場合はそちらが優先されます。年10日以上もらえる人は、年5日を取らせることが会社の義務です。</p></div><p class="foot">※2026年11月時点の公開情報をもとにした一般的な内容です。税額や制度の扱いは、所得・家族構成・会社の規定で異なります。最終判断は国税庁などの一次情報や勤務先の案内で確認してください。</p></div>
+<p class="small">労働基準法の最低日数です（出勤率8割以上が条件）。会社が上乗せしている場合はそちらが優先されます。年10日以上もらえる人は、年5日を取らせることが会社の義務です。</p></div><p class="foot">※2026年11月時点の公開情報をもとにした一般的な内容です。税額や制度の扱いは、所得・家族構成・会社の規定で異なります。最終判断は国税庁などの一次情報や勤務先の案内で確認してください。<br><a href="about.html" style="text-decoration:underline">運営者情報</a>・<a href="nenshu.html" style="text-decoration:underline">年収別の手取り一覧</a></p></div>
 <script src="app.js"></script><script>tabbar("tool");</script><script>
 var T={5:[10,11,12,14,16,18,20],4:[7,8,9,10,12,13,15],3:[5,6,6,8,9,10,11],2:[3,4,4,5,6,6,7],1:[1,2,2,2,3,3,3]},d=5;
 function c(){var mo=(+document.getElementById('yy').value||0)*12+(+document.getElementById('mm').value||0);var out=document.getElementById('out');
