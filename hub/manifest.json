@@ -1,1 +1,1 @@
-{"name": "たっちゃんのお金帳", "short_name": "お金帳", "start_url": "./index.html", "display": "standalone", "background_color": "#fff7ea", "theme_color": "#fff7ea", "icons": [{"src": "img/icon512.png", "sizes": "512x512", "type": "image/png"}]}
+{"name": "会社制度とお金ラボ", "short_name": "お金ラボ", "start_url": "./index.html", "display": "standalone", "background_color": "#fff7ea", "theme_color": "#fff7ea", "icons": [{"src": "img/icon512.png", "sizes": "512x512", "type": "image/png"}]}
