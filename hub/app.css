@@ -227,3 +227,43 @@ details.term div{padding:0 14px 12px 30px;font-size:14px}
 .ncard .ntag{align-self:flex-start;margin:10px 12px 0;font-size:10.5px;font-weight:900;color:var(--c);background:color-mix(in srgb,var(--c) 14%,#fff);border-radius:6px;padding:1px 7px}
 .ncard b{margin:4px 12px 0;font-size:14px;line-height:1.4;color:var(--navy);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .ncard small{margin:2px 12px 0;font-size:11.5px;color:var(--muted)}
+/* 11/27 ふるさと納税 特集 */
+.ghero{position:relative;overflow:hidden;border-radius:24px;padding:18px 16px 16px;background:linear-gradient(135deg,#fff1dc,#ffe0b8);box-shadow:var(--shadow)}
+.ghero .gtag{display:inline-block;background:var(--red);color:#fff;font-size:11px;font-weight:900;border-radius:99px;padding:2px 10px}
+.ghero h2{margin:8px 0 4px;font-size:24px;line-height:1.25;color:var(--navy);font-weight:900;position:relative;z-index:1}
+.ghero p{margin:0;font-size:12px;color:#7a5a2c;font-weight:800;position:relative;z-index:1;max-width:62%}
+.ghero .gill{position:absolute;right:-10px;bottom:-6px;width:52%;opacity:.95}
+.ghero .gill svg{display:block;width:100%;height:auto}
+.gcalc{margin-top:14px}
+.gh{display:block;color:var(--navy);margin-bottom:8px}
+.h2in2{display:flex;align-items:center;gap:8px}
+.h2in2 span{font-size:12px;font-weight:800;color:var(--muted)}
+.h2in2 input{width:110px;font:inherit;font-size:22px;font-weight:900;color:var(--navy);border:2px solid var(--line);border-radius:12px;padding:4px 10px;text-align:right}
+.gcalc .chips{margin:10px 0}
+.gres{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 10px;background:var(--t-orange);border-radius:14px;padding:10px 12px}
+.gres small{font-size:12px;font-weight:800;color:var(--muted)}
+.gres>b{font-size:30px;font-weight:900;color:var(--orange)}
+.gres span{font-size:12px;color:var(--navy);font-weight:800}
+.gsub{display:block;margin-top:10px;font-size:12.5px;font-weight:800;color:var(--orange)}
+.gh2{font-size:16px;color:var(--navy);margin:22px 2px 10px;display:flex;align-items:center;gap:8px}
+.prl{font-size:10px;font-weight:800;color:var(--muted);border:1px solid #d9cdb6;border-radius:5px;padding:0 5px}
+.gbar{display:flex;border-radius:12px;overflow:hidden;font-size:11px;font-weight:900;color:var(--navy);text-align:center;line-height:1.35}
+.gbar span{padding:10px 4px}
+#gt{margin-bottom:10px}
+.gslide{position:relative;display:flex;flex-direction:column;background:var(--paper);border-radius:18px;box-shadow:var(--shadow);overflow:hidden;padding-bottom:12px;flex:0 0 70%!important}
+.gslide .gimg{display:block;aspect-ratio:16/10;background:var(--bg)}
+.gslide .gimg svg{display:block;width:100%;height:100%}
+.gslide em{position:absolute;left:8px;top:8px;font-style:normal;font-size:10px;font-weight:900;color:#fff;background:rgba(28,52,92,.75);border-radius:5px;padding:0 6px}
+.gslide i{font-style:normal;align-self:flex-start;margin:10px 12px 0;font-size:10.5px;font-weight:900;color:var(--orange);background:var(--t-orange);border-radius:6px;padding:1px 7px}
+.gslide b{margin:4px 12px 0;font-size:14.5px;line-height:1.35;color:var(--navy)}
+.gslide small{margin:2px 12px 0;font-size:11.5px;color:var(--muted)}
+.gslide .ggo{margin:8px 12px 0;font-size:12.5px;font-weight:900;color:var(--orange)}
+.gslide.tip{background:linear-gradient(135deg,#1c345c,#2a4a7c);color:#fff;padding:16px;justify-content:center;gap:8px;flex-basis:56%!important}
+.gslide.tip b{margin:0;color:var(--gold);font-size:16px}
+.gslide.tip span{font-size:12.5px;line-height:1.55}
+.gslide.more{justify-content:center;padding:16px;background:var(--t-gold)}
+.gslide.more em{position:static;align-self:flex-start;margin-bottom:6px}
+.gslide.more b,.gslide.more small,.gslide.more .ggo{margin-left:0}
+.gpane[hidden]{display:none!important}
+.ghero .gill{width:44%;bottom:-14px}
+.ghero p{max-width:58%}
